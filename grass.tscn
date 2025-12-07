@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://wholtbo35qby"]
+[gd_scene load_steps=2 format=3 uid="uid://wholtbo35qby"]
 
 [ext_resource type="Texture2D" uid="uid://bffc370hbqiyu" path="res://assets/images/grass.png" id="1_kl2qe"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kl2qe"]
-size = Vector2(1283, 61)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -11,6 +8,5 @@ size = Vector2(1283, 61)
 position = Vector2(640, 360)
 texture = ExtResource("1_kl2qe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(640.5, 689.5)
-shape = SubResource("RectangleShape2D_kl2qe")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, 665, 188, 666, 210, 661, 248, 661, 272, 668, 596, 670, 663, 663, 703, 660, 817, 664, 844, 669, 883, 672, 911, 679, 935, 676, 947, 668, 984, 675, 1007, 679, 1122, 676, 1140, 672, 1193, 674, 1216, 673, 1247, 667, 1279, 679, 1280, 718, 1, 720)

@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpi6ywlwldu7t"]
+[gd_scene load_steps=14 format=3 uid="uid://do4yua7qdakfi"]
 
-[ext_resource type="Script" uid="uid://tbqq0j2bu3ad" path="res://character_body_2d.gd" id="1_ghijl"]
-[ext_resource type="Texture2D" uid="uid://cvu3wano5ldf2" path="res://assets/images/player/Idle.png" id="2_44cfe"]
-[ext_resource type="Texture2D" uid="uid://bho8y648dk3gd" path="res://assets/images/player/Run_Cycle_Right.png" id="3_dd465"]
+[ext_resource type="Script" uid="uid://tbqq0j2bu3ad" path="res://character_body_2d.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cvu3wano5ldf2" path="res://assets/images/player/Idle.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bho8y648dk3gd" path="res://assets/images/player/Run_Cycle_Right.png" id="3_sweqy"]
 
 [sub_resource type="Animation" id="Animation_lhvu3"]
 resource_name = "PlayerRight"
@@ -13,27 +13,27 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp52p"]
-atlas = ExtResource("2_44cfe")
+atlas = ExtResource("2_hqtel")
 region = Rect2(787, 9, 134, 163)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ct3r"]
-atlas = ExtResource("3_dd465")
+atlas = ExtResource("3_sweqy")
 region = Rect2(28, 12, 133, 166)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kp85"]
-atlas = ExtResource("3_dd465")
+atlas = ExtResource("3_sweqy")
 region = Rect2(154, 12, 134, 166)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnedo"]
-atlas = ExtResource("3_dd465")
+atlas = ExtResource("3_sweqy")
 region = Rect2(288, 12, 134, 166)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyqjk"]
-atlas = ExtResource("3_dd465")
+atlas = ExtResource("3_sweqy")
 region = Rect2(414, 12, 135, 166)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k85er"]
-atlas = ExtResource("3_dd465")
+atlas = ExtResource("3_sweqy")
 region = Rect2(559, 12, 134, 166)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ebjds"]
@@ -73,7 +73,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 9.0
+"speed": 14.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
@@ -81,7 +81,7 @@ radius = 39.0
 height = 130.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_ghijl")
+script = ExtResource("1_i3pqv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -89,10 +89,10 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, -65)
+position = Vector2(-7, -51)
 sprite_frames = SubResource("SpriteFrames_ebjds")
 animation = &"Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -64)
+position = Vector2(-1, -59)
 shape = SubResource("CapsuleShape2D_y1dt5")

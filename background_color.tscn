@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy1hxklj0x4rg"]
+[gd_scene load_steps=4 format=3 uid="uid://cy1hxklj0x4rg"]
 
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="1_ukhc7"]
+[ext_resource type="PackedScene" uid="uid://cpi6ywlwldu7t" path="res://character_body_2d.tscn" id="2_a3sqe"]
+[ext_resource type="PackedScene" uid="uid://dwq47ijbtpks4" path="res://world_boundary.tscn" id="3_um5jo"]
 
 [node name="BackgroundColor" type="ColorRect"]
 offset_right = 1280.0
@@ -8,3 +10,9 @@ offset_bottom = 720.0
 color = Color(0.627451, 0.87058824, 0.972549, 1)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_ukhc7")]
+
+[node name="worldBoundary" parent="." instance=ExtResource("3_um5jo")]
+position = Vector2(11, -2)
+
+[node name="Player" parent="." instance=ExtResource("2_a3sqe")]
+position = Vector2(170, 259)
