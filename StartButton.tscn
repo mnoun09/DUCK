@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7uqdfclsfcen"]
+
+[ext_resource type="Texture2D" uid="uid://dn6fvejv6liqt" path="res://assets/images/StartButton.png" id="1_tdweq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdweq"]
+atlas = ExtResource("1_tdweq")
+region = Rect2(416, 220, 401, 191)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 211.0
+offset_right = 805.0
+offset_bottom = 430.0
+texture_normal = SubResource("AtlasTexture_tdweq")
