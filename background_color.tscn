@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy1hxklj0x4rg"]
+[gd_scene load_steps=5 format=3 uid="uid://cy1hxklj0x4rg"]
 
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="1_ukhc7"]
-[ext_resource type="PackedScene" uid="uid://cpi6ywlwldu7t" path="res://character_body_2d.tscn" id="2_a3sqe"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="3_khnw5"]
+[ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_khnw5"]
+[ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_2xcw5"]
 
 [node name="BackgroundColor" type="ColorRect"]
-offset_left = 4.0
-offset_top = 5.0
 offset_right = 1284.0
 offset_bottom = 1262.0
 color = Color(0.627451, 0.87058824, 0.972549, 1)
@@ -14,13 +13,20 @@ color = Color(0.627451, 0.87058824, 0.972549, 1)
 [node name="StaticBody2D" parent="." instance=ExtResource("1_ukhc7")]
 position = Vector2(1, 537)
 
-[node name="Player" parent="." instance=ExtResource("2_a3sqe")]
-position = Vector2(631, 188)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -243)
-zoom = Vector2(1.25, 1.25)
-
 [node name="DuckLogo" type="Sprite2D" parent="."]
-position = Vector2(640, 363)
+position = Vector2(638, 376)
 texture = ExtResource("3_khnw5")
+
+[node name="Control" parent="." instance=ExtResource("4_khnw5")]
+layout_mode = 1
+offset_left = 402.0
+offset_top = 30.0
+offset_right = 402.0
+offset_bottom = 30.0
+
+[node name="Player2" parent="." instance=ExtResource("5_2xcw5")]
+position = Vector2(641, 554)
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+position = Vector2(0, -243)
+zoom = Vector2(1.2, 1.2)

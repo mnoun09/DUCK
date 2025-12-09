@@ -20,4 +20,5 @@ offset_left = 381.0
 offset_top = 211.0
 offset_right = 805.0
 offset_bottom = 430.0
+action_mode = 0
 texture_normal = SubResource("AtlasTexture_tdweq")
