@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dac2kxcbcwfck"]
+
+[ext_resource type="Texture2D" uid="uid://bynsgth737o8e" path="res://assets/images/Buttons/Credits.png" id="1_vjhdq"]
+[ext_resource type="Texture2D" uid="uid://blfoo2v5ru2hk" path="res://assets/images/Buttons/HoverCredits.png" id="2_xg66w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk2yd"]
+atlas = ExtResource("1_vjhdq")
+region = Rect2(624, 416, 213, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4vvx"]
+atlas = ExtResource("2_xg66w")
+region = Rect2(624, 416, 213, 97)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_kk2yd")
+texture_hover = SubResource("AtlasTexture_j4vvx")

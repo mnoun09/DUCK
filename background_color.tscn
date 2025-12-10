@@ -1,23 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy1hxklj0x4rg"]
+[gd_scene load_steps=6 format=3 uid="uid://cy1hxklj0x4rg"]
 
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="1_ukhc7"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="3_khnw5"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_khnw5"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_2xcw5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
+size = Vector2(103, 1885)
+
 [node name="BackgroundColor" type="ColorRect"]
-offset_right = 1284.0
-offset_bottom = 1262.0
-color = Color(0.627451, 0.87058824, 0.972549, 1)
+offset_left = -2.0
+offset_top = -824.0
+offset_right = 1282.0
+offset_bottom = 924.0
+color = Color(0.022744464, 0.14094532, 0.18447259, 1)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_ukhc7")]
-position = Vector2(1, 537)
+position = Vector2(1, 844)
 
 [node name="DuckLogo" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(638, 376)
 texture = ExtResource("3_khnw5")
 
 [node name="Control" parent="." instance=ExtResource("4_khnw5")]
+visible = false
 layout_mode = 1
 offset_left = 402.0
 offset_top = 30.0
@@ -30,3 +37,21 @@ position = Vector2(641, 554)
 [node name="Camera2D" type="Camera2D" parent="Player2"]
 position = Vector2(0, -243)
 zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = -10000
+limit_right = 1280
+limit_bottom = 740
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+position = Vector2(207, -157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+position = Vector2(-255.5, 932.5)
+shape = SubResource("RectangleShape2D_khnw5")
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+position = Vector2(1594, -116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+position = Vector2(-255.5, 932.5)
+shape = SubResource("RectangleShape2D_khnw5")

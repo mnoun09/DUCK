@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhurk772uo2x"]
+
+[ext_resource type="Texture2D" uid="uid://dkv56qa3mil4c" path="res://assets/images/Buttons/Settings.png" id="1_ri2bv"]
+[ext_resource type="Texture2D" uid="uid://clitirjw4d6fi" path="res://assets/images/Buttons/HoverSettings.png" id="2_s584q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8mqc"]
+atlas = ExtResource("1_ri2bv")
+region = Rect2(284, 415, 257, 138)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ktos"]
+atlas = ExtResource("2_s584q")
+region = Rect2(284, 415, 257, 138)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_a8mqc")
+texture_hover = SubResource("AtlasTexture_8ktos")

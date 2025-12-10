@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7uqdfclsfcen"]
+[gd_scene load_steps=6 format=3 uid="uid://b7uqdfclsfcen"]
 
-[ext_resource type="Texture2D" uid="uid://dn6fvejv6liqt" path="res://assets/images/StartButton.png" id="1_tdweq"]
+[ext_resource type="Texture2D" uid="uid://dn6fvejv6liqt" path="res://assets/images/Buttons/StartButton.png" id="1_tdweq"]
+[ext_resource type="Texture2D" uid="uid://b5n5snthmlrl1" path="res://assets/images/Buttons/HoverStart.png" id="2_17ka4"]
+[ext_resource type="Script" uid="uid://c0cmahr8xrktb" path="res://texture_button.gd" id="2_tcgu8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdweq"]
 atlas = ExtResource("1_tdweq")
+region = Rect2(416, 220, 401, 191)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17ka4"]
+atlas = ExtResource("2_17ka4")
 region = Rect2(416, 220, 401, 191)
 
 [node name="Control" type="Control"]
@@ -22,3 +28,7 @@ offset_right = 805.0
 offset_bottom = 430.0
 action_mode = 0
 texture_normal = SubResource("AtlasTexture_tdweq")
+texture_hover = SubResource("AtlasTexture_17ka4")
+script = ExtResource("2_tcgu8")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
