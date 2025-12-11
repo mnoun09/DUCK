@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://wm3ejlu3ya1d"]
+
+[ext_resource type="Script" uid="uid://mwyjdvnplp2k" path="res://node_2d.gd" id="1_n15rr"]
+[ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/player/Meteor/Meteor-4.png" id="2_qq4pp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6xqx"]
+radius = 57.31492
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi1gc"]
+atlas = ExtResource("2_qq4pp")
+region = Rect2(577, 211, 364, 397)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_n15rr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(316, 295)
+shape = SubResource("CircleShape2D_p6xqx")
+
+[node name="Meteor1" type="Sprite2D" parent="."]
+position = Vector2(440, 154)
+texture = SubResource("AtlasTexture_hi1gc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
