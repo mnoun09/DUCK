@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhurk772uo2x"]
+[gd_scene load_steps=6 format=3 uid="uid://bhurk772uo2x"]
 
 [ext_resource type="Texture2D" uid="uid://dkv56qa3mil4c" path="res://assets/images/Buttons/Settings.png" id="1_ri2bv"]
 [ext_resource type="Texture2D" uid="uid://clitirjw4d6fi" path="res://assets/images/Buttons/HoverSettings.png" id="2_s584q"]
+[ext_resource type="Script" uid="uid://nl5dojt5imic" path="res://settings_button.gd" id="3_s584q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8mqc"]
 atlas = ExtResource("1_ri2bv")
@@ -25,3 +26,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = SubResource("AtlasTexture_a8mqc")
 texture_hover = SubResource("AtlasTexture_8ktos")
+script = ExtResource("3_s584q")
+
+[connection signal="pressed" from="SettingsButton" to="SettingsButton" method="_on_pressed"]

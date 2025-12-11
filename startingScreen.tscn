@@ -37,12 +37,6 @@ offset_top = 410.0
 offset_right = 563.0
 offset_bottom = 410.0
 
-[node name="Control" parent="." instance=ExtResource("4_xocsq")]
-offset_left = 910.0
-offset_top = 411.0
-offset_right = 910.0
-offset_bottom = 411.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(637, 361)
 limit_left = -100
@@ -51,3 +45,9 @@ limit_right = 1380
 limit_bottom = 720
 limit_smoothed = true
 script = ExtResource("6_reuxv")
+
+[node name="Credits" parent="." instance=ExtResource("4_xocsq")]
+offset_left = 879.0
+offset_top = 406.0
+offset_right = 879.0
+offset_bottom = 406.0

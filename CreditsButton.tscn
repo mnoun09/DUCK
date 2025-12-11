@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dac2kxcbcwfck"]
+[gd_scene load_steps=6 format=3 uid="uid://dac2kxcbcwfck"]
 
 [ext_resource type="Texture2D" uid="uid://bynsgth737o8e" path="res://assets/images/Buttons/Credits.png" id="1_vjhdq"]
 [ext_resource type="Texture2D" uid="uid://blfoo2v5ru2hk" path="res://assets/images/Buttons/HoverCredits.png" id="2_xg66w"]
+[ext_resource type="Script" uid="uid://btml3wl83n7os" path="res://credit_button.gd" id="3_xg66w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kk2yd"]
 atlas = ExtResource("1_vjhdq")
@@ -25,3 +26,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = SubResource("AtlasTexture_kk2yd")
 texture_hover = SubResource("AtlasTexture_j4vvx")
+script = ExtResource("3_xg66w")
+
+[connection signal="pressed" from="CreditButton" to="CreditButton" method="_on_pressed"]
