@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnjlcf644bh8t"]
+[gd_scene load_steps=3 format=3 uid="uid://bnjlcf644bh8t"]
 
-[ext_resource type="Texture2D" uid="uid://bynsgth737o8e" path="res://assets/images/Buttons/Credits.png" id="1_3fla4"]
+[ext_resource type="Texture2D" uid="uid://cju3n34vxag4u" path="res://assets/images/CreditText.png" id="1_c76su"]
+[ext_resource type="PackedScene" uid="uid://ta3ene04ihdl" path="res://backButton.tscn" id="2_e7hlr"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,17 +10,10 @@ offset_right = 1277.0
 offset_bottom = 739.0
 color = Color(0.627451, 0.87058824, 0.972549, 1)
 
-[node name="Credits" type="Sprite2D" parent="."]
-position = Vector2(518, -19.000002)
-scale = Vector2(1.421875, 1.5416666)
-texture = ExtResource("1_3fla4")
+[node name="CreditText" type="Sprite2D" parent="."]
+position = Vector2(683, 372)
+texture = ExtResource("1_c76su")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 352.0
-offset_top = 224.0
-offset_right = 949.0
-offset_bottom = 337.0
-theme_override_font_sizes/font_size = 40
-text = "Made for Hack Club MilkyWay!!
-Enjoy!"
-horizontal_alignment = 1
+[node name="Control" parent="." instance=ExtResource("2_e7hlr")]
+offset_left = -23.0
+offset_right = -23.0

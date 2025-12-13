@@ -1,0 +1,74 @@
+[gd_scene load_steps=15 format=3 uid="uid://dyi37cq33p2mu"]
+
+[ext_resource type="Texture2D" uid="uid://dnb75672lsisq" path="res://assets/images/Bird/BirdDookie1.png" id="1_o1d2h"]
+[ext_resource type="Texture2D" uid="uid://d0cpo6y2qqnr6" path="res://assets/images/Bird/BirdDookie2.png" id="2_fwwpj"]
+[ext_resource type="Texture2D" uid="uid://cqnghbraphvpl" path="res://assets/images/Bird/BirdDookie3.png" id="3_ah16y"]
+[ext_resource type="Texture2D" uid="uid://cqijvjldktb1u" path="res://assets/images/Bird/BirdDookie4.png" id="4_r4k81"]
+[ext_resource type="Texture2D" uid="uid://cjaqkylixx70q" path="res://assets/images/Bird/BirdDookie5.png" id="5_vxtes"]
+[ext_resource type="Texture2D" uid="uid://cbkaxwrujge5n" path="res://assets/images/Bird/BirdDookie6.png" id="6_jfvmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yrh4"]
+atlas = ExtResource("1_o1d2h")
+region = Rect2(660, 138, 30, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiafo"]
+atlas = ExtResource("2_fwwpj")
+region = Rect2(663, 200, 30, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h63p"]
+atlas = ExtResource("3_ah16y")
+region = Rect2(668, 253, 30, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbv6a"]
+atlas = ExtResource("4_r4k81")
+region = Rect2(674, 313, 30, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxfmj"]
+atlas = ExtResource("5_vxtes")
+region = Rect2(680, 483, 30, 47)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c700"]
+atlas = ExtResource("6_jfvmm")
+region = Rect2(687, 550, 31, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5cjlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yrh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiafo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h63p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbv6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxfmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c700")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y0scg"]
+radius = 5.0
+
+[node name="birdDookie" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(236, 130)
+sprite_frames = SubResource("SpriteFrames_5cjlg")
+animation = &"falling"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(237, 138)
+shape = SubResource("CapsuleShape2D_y0scg")

@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyt8esiyjmj74"]
+[gd_scene load_steps=10 format=3 uid="uid://dyt8esiyjmj74"]
 
 [ext_resource type="Script" uid="uid://joph6pcefpet" path="res://meteor.gd" id="1_o8pv2"]
-[ext_resource type="Texture2D" uid="uid://d2stigoxrckd4" path="res://assets/images/player/Meteor/Meteor-1.png" id="1_yxpia"]
-[ext_resource type="Texture2D" uid="uid://dob6aikk8tehv" path="res://assets/images/player/Meteor/Meteor-2.png" id="2_o8pv2"]
-[ext_resource type="Texture2D" uid="uid://bng3cj4ae1g3n" path="res://assets/images/player/Meteor/Meteor-3.png" id="3_58b82"]
-[ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/player/Meteor/Meteor-4.png" id="4_jyjh2"]
-[ext_resource type="Texture2D" uid="uid://dxehwt4d04a03" path="res://assets/images/player/Meteor/Meteor-5.png" id="5_1ai8l"]
-[ext_resource type="Texture2D" uid="uid://ts3jcc7y5ey0" path="res://assets/images/player/Meteor/Meteor-6.png" id="6_jqytj"]
-[ext_resource type="Script" uid="uid://ewfqewomdw8m" path="res://animated_sprite_2d.gd" id="8_58b82"]
+[ext_resource type="Texture2D" uid="uid://d2stigoxrckd4" path="res://assets/images/Buttons/Meteor/Meteor-1.png" id="1_yxpia"]
+[ext_resource type="Texture2D" uid="uid://dob6aikk8tehv" path="res://assets/images/Buttons/Meteor/Meteor-2.png" id="2_o8pv2"]
+[ext_resource type="Texture2D" uid="uid://bng3cj4ae1g3n" path="res://assets/images/Buttons/Meteor/Meteor-3.png" id="3_58b82"]
+[ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/Buttons/Meteor/Meteor-4.png" id="4_jyjh2"]
+[ext_resource type="Texture2D" uid="uid://dxehwt4d04a03" path="res://assets/images/Buttons/Meteor/Meteor-5.png" id="5_1ai8l"]
+[ext_resource type="Texture2D" uid="uid://ts3jcc7y5ey0" path="res://assets/images/Buttons/Meteor/Meteor-6.png" id="6_jqytj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ckb7t"]
 animations = [{
@@ -50,7 +49,6 @@ script = ExtResource("1_o8pv2")
 position = Vector2(637, 96)
 sprite_frames = SubResource("SpriteFrames_ckb7t")
 frame_progress = 0.19589739
-script = ExtResource("8_58b82")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(635, 285)

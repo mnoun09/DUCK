@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy1hxklj0x4rg"]
+[gd_scene load_steps=9 format=3 uid="uid://cy1hxklj0x4rg"]
 
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="1_ukhc7"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="3_khnw5"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_khnw5"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_2xcw5"]
 [ext_resource type="PackedScene" uid="uid://dyt8esiyjmj74" path="res://meteor.tscn" id="5_tvqiy"]
+[ext_resource type="PackedScene" uid="uid://bshdjry3rf0xe" path="res://bird.tscn" id="6_tvqiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
 size = Vector2(103, 1885)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvqiy"]
+size = Vector2(1279.5, 148.5)
 
 [node name="BackgroundColor" type="ColorRect"]
 offset_left = -2.0
@@ -43,12 +47,12 @@ limit_top = -10000
 limit_right = 1280
 limit_bottom = 740
 
-[node name="BorderLeft" type="StaticBody2D" parent="."]
-position = Vector2(207, -157)
+[node name="Meteor" parent="." instance=ExtResource("5_tvqiy")]
+position = Vector2(686, 311)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
-position = Vector2(-255.5, 932.5)
-shape = SubResource("RectangleShape2D_khnw5")
+[node name="bird" parent="." instance=ExtResource("6_tvqiy")]
+visible = false
+position = Vector2(575, 1123)
 
 [node name="BorderRight" type="StaticBody2D" parent="."]
 position = Vector2(1594, -116)
@@ -57,8 +61,19 @@ position = Vector2(1594, -116)
 position = Vector2(-255.5, 932.5)
 shape = SubResource("RectangleShape2D_khnw5")
 
-[node name="Meteor" parent="." instance=ExtResource("5_tvqiy")]
-position = Vector2(83, 1153)
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+position = Vector2(207, -157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+position = Vector2(-255.5, 932.5)
+shape = SubResource("RectangleShape2D_khnw5")
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+position = Vector2(446, 596)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+position = Vector2(198.25, 994.75)
+shape = SubResource("RectangleShape2D_tvqiy")
 
 [connection signal="visibility_changed" from="Player2" to="Player2" method="_on_visibility_changed"]
 [connection signal="body_shape_entered" from="Meteor" to="Meteor" method="_on_body_shape_entered"]

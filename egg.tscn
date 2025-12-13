@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjv1rqcqq7m8"]
+
+[ext_resource type="Texture2D" uid="uid://bfl5trv6bomh1" path="res://assets/images/Egg.png" id="1_6upkn"]
+[ext_resource type="Script" uid="uid://bo1xg3dr82qr8" path="res://egg.gd" id="1_60cwx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60cwx"]
+atlas = ExtResource("1_6upkn")
+region = Rect2(1086, 19, 36, 45)
+
+[node name="Egg" type="Node2D"]
+script = ExtResource("1_60cwx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1238, 38)
+texture = SubResource("AtlasTexture_60cwx")

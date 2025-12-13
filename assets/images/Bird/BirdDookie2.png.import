@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf20j0qgce61w"
-path="res://.godot/imported/Run_Cycle_Left.png-80cfb6a0b13b8849a5e4c3c217817a76.ctex"
+uid="uid://d0cpo6y2qqnr6"
+path="res://.godot/imported/BirdDookie2.png-529cb254f1943f6c5deff562270a8811.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/Run_Cycle_Left.png"
-dest_files=["res://.godot/imported/Run_Cycle_Left.png-80cfb6a0b13b8849a5e4c3c217817a76.ctex"]
+source_file="res://assets/images/Bird/BirdDookie2.png"
+dest_files=["res://.godot/imported/BirdDookie2.png-529cb254f1943f6c5deff562270a8811.ctex"]
 
 [params]
 

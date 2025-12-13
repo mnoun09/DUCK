@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://wm3ejlu3ya1d"]
 
 [ext_resource type="Script" uid="uid://mwyjdvnplp2k" path="res://node_2d.gd" id="1_n15rr"]
-[ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/player/Meteor/Meteor-4.png" id="2_qq4pp"]
+[ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/Buttons/Meteor/Meteor-4.png" id="2_qq4pp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p6xqx"]
 radius = 57.31492

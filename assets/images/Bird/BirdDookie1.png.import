@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2stigoxrckd4"
-path="res://.godot/imported/Meteor-1.png-d1a11048359673f8a79f8682be4fa6bd.ctex"
+uid="uid://dnb75672lsisq"
+path="res://.godot/imported/BirdDookie1.png-d694997f74b1a895af33068eca20c347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/player/Meteor/Meteor-1.png"
-dest_files=["res://.godot/imported/Meteor-1.png-d1a11048359673f8a79f8682be4fa6bd.ctex"]
+source_file="res://assets/images/Bird/BirdDookie1.png"
+dest_files=["res://.godot/imported/BirdDookie1.png-d694997f74b1a895af33068eca20c347.ctex"]
 
 [params]
 

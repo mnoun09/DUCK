@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf4tqjla6xd6y"]
+
+[ext_resource type="PackedScene" uid="uid://bshdjry3rf0xe" path="res://bird.tscn" id="1_4ytv8"]
+[ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="2_bf0gi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awrrd"]
+size = Vector2(1290, 157)
+
+[node name="ColorRect" type="ColorRect"]
+offset_top = -897.0
+offset_right = 1867.0
+offset_bottom = 1840.0
+color = Color(0.022744464, 0.14094532, 0.18447259, 1)
+
+[node name="bird" parent="." instance=ExtResource("1_4ytv8")]
+position = Vector2(793, 918)
+
+[node name="Player" parent="." instance=ExtResource("2_bf0gi")]
+position = Vector2(641, 450)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1, 67)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_right = 1280
+limit_bottom = 720
+
+[node name="ColorRect" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+offset_top = 1541.0
+offset_right = 1327.0
+offset_bottom = 2028.0
+color = Color(0.11764706, 0.2, 0.05882353, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect"]
+position = Vector2(642, 1609.5)
+shape = SubResource("RectangleShape2D_awrrd")
