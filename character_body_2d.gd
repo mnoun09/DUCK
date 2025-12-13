@@ -27,5 +27,10 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-
 	move_and_slide()
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("hit")
+	pass # Replace with function body.

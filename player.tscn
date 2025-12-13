@@ -1,25 +1,66 @@
-[gd_scene load_steps=32 format=3 uid="uid://do4yua7qdakfi"]
+[gd_scene load_steps=50 format=3 uid="uid://do4yua7qdakfi"]
 
 [ext_resource type="Script" uid="uid://tbqq0j2bu3ad" path="res://character_body_2d.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://b24543u60neoh" path="res://assets/images/player/hurt/Hurt_Animation_-1.png" id="2_5tmop"]
 [ext_resource type="Texture2D" uid="uid://cvu3wano5ldf2" path="res://assets/images/player/Idle/Idle.png" id="2_hqtel"]
+[ext_resource type="Texture2D" uid="uid://bc72yivq7suj1" path="res://assets/images/player/hurt/Hurt_Animation_-2.png" id="3_7ahtn"]
 [ext_resource type="Texture2D" uid="uid://d2jiimnoyxmig" path="res://assets/images/player/Idle/Idle_animation-1.png" id="3_ivps1"]
 [ext_resource type="Texture2D" uid="uid://bho8y648dk3gd" path="res://assets/images/player/Run_Cycle_Right.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://dsmkvp1ma6qdt" path="res://assets/images/player/hurt/Hurt_Animation_-3.png" id="4_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://2vq82hnxbkgc" path="res://assets/images/player/Idle/Idle_animation-2.png" id="4_urp6f"]
 [ext_resource type="Texture2D" uid="uid://dquwtphmoq731" path="res://assets/images/player/Idle/Idle_animation-3.png" id="5_bwjto"]
+[ext_resource type="Texture2D" uid="uid://d2qaafkbwlym4" path="res://assets/images/player/hurt/Hurt_Animation_-4.png" id="5_dx0e4"]
 [ext_resource type="Texture2D" uid="uid://n23eyb7cb2a4" path="res://assets/images/player/Idle/Idle_animation-4.png" id="6_606se"]
+[ext_resource type="Texture2D" uid="uid://188n1xcm8484" path="res://assets/images/player/hurt/Hurt_Animation_-5.png" id="6_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://bi42biwbcklxp" path="res://assets/images/player/hurt/Hurt_Animation_-6.png" id="7_7hik5"]
 [ext_resource type="Texture2D" uid="uid://bfixudxufynjs" path="res://assets/images/player/Idle/Idle_animation-5.png" id="7_u1c27"]
 [ext_resource type="Texture2D" uid="uid://3yeqiylw1ww6" path="res://assets/images/player/Idle/Idle_animation-6.png" id="8_op7ga"]
+[ext_resource type="Texture2D" uid="uid://cu362s0tqi6m6" path="res://assets/images/player/hurt/Hurt_Animation_-7.png" id="8_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://bk7hdbf2n8gx2" path="res://assets/images/player/hurt/Hurt_Animation_-8.png" id="9_2wuci"]
 [ext_resource type="Texture2D" uid="uid://ccchwbtyb44ij" path="res://assets/images/player/Idle/Idle_animation-7.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://wq73l4fkdbji" path="res://assets/images/player/hurt/Hurt_Animation_-9.png" id="10_iruf7"]
 [ext_resource type="Texture2D" uid="uid://gavaewxcoxiv" path="res://assets/images/player/Idle/Idle_animation-8.png" id="10_pylmc"]
 [ext_resource type="Texture2D" uid="uid://cn1h7qe2j5sf7" path="res://assets/images/player/Idle/Idle_animation-9.png" id="11_pbfsw"]
 
-[sub_resource type="Animation" id="Animation_lhvu3"]
-resource_name = "PlayerRight"
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
+radius = 39.0
+height = 130.0
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sjlk"]
-_data = {
-&"PlayerRight": SubResource("Animation_lhvu3")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
+atlas = ExtResource("2_5tmop")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efrwb"]
+atlas = ExtResource("3_7ahtn")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiqhm"]
+atlas = ExtResource("4_7lmhl")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkwlq"]
+atlas = ExtResource("5_dx0e4")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl5qd"]
+atlas = ExtResource("6_jm5j8")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek41f"]
+atlas = ExtResource("7_7hik5")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khis8"]
+atlas = ExtResource("8_qtqh7")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
+atlas = ExtResource("9_2wuci")
+region = Rect2(783, 0, 143, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgbbb"]
+atlas = ExtResource("10_iruf7")
+region = Rect2(783, 0, 143, 178)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tmop"]
 atlas = ExtResource("2_hqtel")
@@ -85,6 +126,38 @@ region = Rect2(559, 12, 134, 166)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_634y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efrwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiqhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkwlq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl5qd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek41f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khis8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b88wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgbbb")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5tmop")
 }, {
 "duration": 1.0,
@@ -146,30 +219,30 @@ animations = [{
 "loop": true,
 "name": &"Run",
 "speed": 14.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
-radius = 39.0
-height = 130.0
+[sub_resource type="Animation" id="Animation_lhvu3"]
+resource_name = "PlayerRight"
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sjlk"]
+_data = {
+&"PlayerRight": SubResource("Animation_lhvu3")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -54)
+shape = SubResource("CapsuleShape2D_y1dt5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -60)
+sprite_frames = SubResource("SpriteFrames_ebjds")
+animation = &"Hurt"
+frame_progress = 0.7209666
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_4sjlk")
 }
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, -60)
-sprite_frames = SubResource("SpriteFrames_ebjds")
-animation = &"Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -54)
-shape = SubResource("CapsuleShape2D_y1dt5")

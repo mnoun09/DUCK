@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 	position.y += 200 * delta
 	pass
 
+
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	
+	animated_sprite.stop()
 	print ("player hit")
 	pass # Replace with function body.
