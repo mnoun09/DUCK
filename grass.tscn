@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bffc370hbqiyu" path="res://assets/images/grass.png" id="1_kl2qe"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(1, 0)
 
 [node name="Grass" type="Sprite2D" parent="."]
 position = Vector2(640, 360)

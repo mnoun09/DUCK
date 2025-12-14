@@ -17,6 +17,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	animated_sprite.stop()
-	print ("player hit")
+	print ()
+	pass # Replace with function body.
+
+
+func _on_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
