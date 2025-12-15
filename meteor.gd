@@ -2,6 +2,8 @@ extends Area2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+@export var damage: = 1
+var moving := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,15 +13,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x -= 200 * delta
-	position.y += 200 * delta
+	if not moving: 
+		return
+		
+	position.x -= 300 * delta
+	position.y += 300 * delta
 	pass
 
-
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print ()
-	pass # Replace with function body.
-
-
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		moving = false
+		body.on_hit_by_meteor(damage)
+		print ("hit")
+		animated_sprite.stop()
+		queue_free()
+		
 	pass # Replace with function body.

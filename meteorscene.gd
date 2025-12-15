@@ -14,17 +14,11 @@ func _process(delta: float) -> void:
 	
 func generate_meteor():
 	var obs
-	obs = meteor.instantiate
+	obs = meteor.instantiate()
 	var obs_x : int = 686
-	var obs_y : int = 311
+	var obs_y : int = 400
 	add_meteor(obs, obs_x, obs_y)
 	
 func add_meteor(obs, x, y):
 	obs.position = Vector2i(x, y)
 	add_child(obs)
-	obs.body_shape_entered.connect(hit_obs)
-	
-	
-func hit_obs(body):
-	if body == "Player":
-		print ("collision")

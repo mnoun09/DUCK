@@ -7,6 +7,5 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://background_color.tscn")
-	print ("hi:")
+	get_tree().change_scene_to_file("res://meteorscene.tscn")
 	pass # Replace with function body.

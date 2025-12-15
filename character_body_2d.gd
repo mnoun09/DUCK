@@ -7,8 +7,12 @@ const JUMP_VELOCITY = -400.0
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	if is_hit: 
+			return
+			
 	# Add the gravity.
 	if not is_on_floor():
+			
 		animated_sprite.play("Idle")
 		velocity += get_gravity() * delta
 
@@ -28,9 +32,22 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	move_and_slide()
+	
+var is_hit := false
 
+func on_hit_by_meteor(damage: int):
+	if is_hit:
+		return
+		
+	is_hit = true
+	animated_sprite.play("Hurt")
+	print("Playing animation:", animated_sprite.animation)
 
+	await animated_sprite.animation_finished
+	
+	is_hit = false
+	print("Playing animation:", animated_sprite.animation)
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("hit")
-	pass # Replace with function body.
+	animated_sprite.play("Idle")
+	
+		

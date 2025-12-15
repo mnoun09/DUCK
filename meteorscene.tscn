@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://odki24oivns2"]
+[gd_scene load_steps=8 format=3 uid="uid://odki24oivns2"]
 
 [ext_resource type="Script" uid="uid://b8yw8u8xegio5" path="res://meteorscene.gd" id="1_b57mf"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_ieart"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="3_72dmo"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_u3u7l"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_8453j"]
-[ext_resource type="PackedScene" uid="uid://cbjv1rqcqq7m8" path="res://egg.tscn" id="6_xl4rx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
 size = Vector2(103, 1885)
@@ -21,17 +20,11 @@ offset_bottom = 924.0
 color = Color(0.022744464, 0.14094532, 0.18447259, 1)
 script = ExtResource("1_b57mf")
 
+[node name="StaticBody2D" parent="." instance=ExtResource("2_ieart")]
+position = Vector2(1, 844)
+
 [node name="Player" parent="." instance=ExtResource("5_8453j")]
 position = Vector2(644, 1486)
-
-[node name="Egg2" parent="Player" instance=ExtResource("6_xl4rx")]
-position = Vector2(-808, -522)
-
-[node name="Egg3" parent="Player" instance=ExtResource("6_xl4rx")]
-position = Vector2(-751, -522)
-
-[node name="Egg" parent="Player" instance=ExtResource("6_xl4rx")]
-position = Vector2(-808, -74)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -243)
@@ -40,9 +33,6 @@ limit_left = 0
 limit_top = -10000
 limit_right = 1280
 limit_bottom = 740
-
-[node name="StaticBody2D" parent="." instance=ExtResource("2_ieart")]
-position = Vector2(1, 844)
 
 [node name="DuckLogo" type="Sprite2D" parent="."]
 visible = false
