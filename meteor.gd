@@ -14,6 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not moving: 
+		animated_sprite.play("crash")
 		return
 		
 	position.x -= 300 * delta
@@ -22,9 +23,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:
-		moving = false
+		
 		body.on_hit_by_meteor(damage)
 		print ("hit")
+		animated_sprite.play("default_1")
+		await animated_sprite.animation_finished
+		moving = false
+		await animated_sprite.animation_finished
 		animated_sprite.stop()
 		queue_free()
 		

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf5q4omiw7n1x"]
+
+[ext_resource type="Texture2D" uid="uid://c814spu2nwtd6" path="res://assets/images/Platform2.png" id="1_tep5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7ej6"]
+atlas = ExtResource("1_tep5r")
+region = Rect2(871, 1271, 148, 88)
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="Platform2" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+texture = SubResource("AtlasTexture_d7ej6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(-20.8, -33.3, -23, -32.2, -23, -31, -28, -27, -53.2, -24, -59, -24, -55, -14.700001, -55, -3.7999992, -49.5, -1, -48.1, -1, -44, 6.4000015, -44, 11.400002, -27.400002, 18, -25.7, 18, -8, 32.9, -8, 34.199997, -5.9000015, 35.300003, 9, 25, 14.400002, 23.699997, 28.599998, 30, 31.300003, 30, 45, -3.5999985, 45, -4.9000015, 52.699997, -10, 54.899994, -10, 55.899994, -23, 57, -23, 57, -29, 28.900002, -29, -8.199997, -25, -9.400002, -25)

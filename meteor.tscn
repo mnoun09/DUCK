@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyt8esiyjmj74"]
+[gd_scene load_steps=19 format=3 uid="uid://dyt8esiyjmj74"]
 
 [ext_resource type="Script" uid="uid://joph6pcefpet" path="res://meteor.gd" id="1_o8pv2"]
 [ext_resource type="Texture2D" uid="uid://d2stigoxrckd4" path="res://assets/images/Buttons/Meteor/Meteor-1.png" id="1_yxpia"]
@@ -7,9 +7,69 @@
 [ext_resource type="Texture2D" uid="uid://bphyoik0ottnh" path="res://assets/images/Buttons/Meteor/Meteor-4.png" id="4_jyjh2"]
 [ext_resource type="Texture2D" uid="uid://dxehwt4d04a03" path="res://assets/images/Buttons/Meteor/Meteor-5.png" id="5_1ai8l"]
 [ext_resource type="Texture2D" uid="uid://ts3jcc7y5ey0" path="res://assets/images/Buttons/Meteor/Meteor-6.png" id="6_jqytj"]
+[ext_resource type="Texture2D" uid="uid://b37so1rgldl1k" path="res://assets/images/Buttons/Crash-1.png" id="7_1scpa"]
+[ext_resource type="Texture2D" uid="uid://dbqcgudftsr0u" path="res://assets/images/Buttons/Crash-2.png" id="8_e43bx"]
+[ext_resource type="Texture2D" uid="uid://b78wftahlhec1" path="res://assets/images/Buttons/Crash-3.png" id="9_6r80l"]
+[ext_resource type="Texture2D" uid="uid://fsr4dx73ysg2" path="res://assets/images/Buttons/Crash-4.png" id="10_6e3rn"]
+[ext_resource type="Texture2D" uid="uid://ds4ubtw7ds6mj" path="res://assets/images/Buttons/Crash-5.png" id="11_87fhb"]
+[ext_resource type="Texture2D" uid="uid://cebapghawhhjk" path="res://assets/images/Buttons/Crash-6.png" id="12_rfthp"]
+[ext_resource type="Texture2D" uid="uid://bldxc70imaol4" path="res://assets/images/Buttons/Crash-7.png" id="13_7p6di"]
+[ext_resource type="Texture2D" uid="uid://d2yne77c3sp1c" path="res://assets/images/Buttons/Crash-8.png" id="14_u0c77"]
+[ext_resource type="Texture2D" uid="uid://bw3nb4garghft" path="res://assets/images/Buttons/Crash-9.png" id="15_ltag7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5qpv"]
+radius = 57.0
+height = 120.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ckb7t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1ai8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jqytj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_58b82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o8pv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yxpia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1scpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e43bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6r80l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6e3rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_87fhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rfthp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7p6di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_u0c77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ltag7")
+}],
+"loop": false,
+"name": &"crash",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_yxpia")
@@ -32,11 +92,30 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yxpia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o8pv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_58b82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jyjh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1ai8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jqytj")
+}],
+"loop": false,
+"name": &"default_1",
+"speed": 16.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5qpv"]
-radius = 57.0
-height = 120.0
 
 [node name="Meteor" type="Area2D"]
 gravity_space_override = 1
@@ -45,13 +124,13 @@ gravity_point_center = Vector2(1, 1)
 gravity_direction = Vector2(1, 1)
 script = ExtResource("1_o8pv2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(637, 96)
-sprite_frames = SubResource("SpriteFrames_ckb7t")
-frame_progress = 0.19589739
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(635, 285)
 shape = SubResource("CapsuleShape2D_s5qpv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(637, 96)
+sprite_frames = SubResource("SpriteFrames_ckb7t")
+animation = &"crash"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

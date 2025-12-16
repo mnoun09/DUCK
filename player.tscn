@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://do4yua7qdakfi"]
+[gd_scene load_steps=54 format=3 uid="uid://do4yua7qdakfi"]
 
 [ext_resource type="Script" uid="uid://tbqq0j2bu3ad" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b24543u60neoh" path="res://assets/images/player/hurt/Hurt_Animation_-1.png" id="2_5tmop"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://wq73l4fkdbji" path="res://assets/images/player/hurt/Hurt_Animation_-9.png" id="10_iruf7"]
 [ext_resource type="Texture2D" uid="uid://gavaewxcoxiv" path="res://assets/images/player/Idle/Idle_animation-8.png" id="10_pylmc"]
 [ext_resource type="Texture2D" uid="uid://cn1h7qe2j5sf7" path="res://assets/images/player/Idle/Idle_animation-9.png" id="11_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://kt3is4tugtk2" path="res://assets/images/player/Jump-1.png" id="21_jm5j8"]
+[ext_resource type="PackedScene" uid="uid://cbjv1rqcqq7m8" path="res://egg.tscn" id="22_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://myqokkci6xpw" path="res://assets/images/player/Jump-2.png" id="22_7hik5"]
+[ext_resource type="Texture2D" uid="uid://bf3toffxg4aka" path="res://assets/images/player/Jump-3.png" id="23_qtqh7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
 radius = 39.0
@@ -38,6 +42,10 @@ region = Rect2(783, 0, 143, 178)
 atlas = ExtResource("4_7lmhl")
 region = Rect2(783, 0, 143, 178)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
+atlas = ExtResource("9_2wuci")
+region = Rect2(783, 0, 143, 178)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkwlq"]
 atlas = ExtResource("5_dx0e4")
 region = Rect2(783, 0, 143, 178)
@@ -52,10 +60,6 @@ region = Rect2(783, 0, 143, 178)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_khis8"]
 atlas = ExtResource("8_qtqh7")
-region = Rect2(783, 0, 143, 178)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b88wv"]
-atlas = ExtResource("9_2wuci")
 region = Rect2(783, 0, 143, 178)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pgbbb"]
@@ -135,6 +139,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_hiqhm")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_b88wv")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_634y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efrwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiqhm")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tkwlq")
 }, {
 "duration": 1.0,
@@ -153,7 +174,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_pgbbb")
 }],
 "loop": false,
-"name": &"Hurt",
+"name": &"Hurt_1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -190,6 +211,23 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qtqh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7hik5")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -239,11 +277,36 @@ shape = SubResource("CapsuleShape2D_y1dt5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, -60)
 sprite_frames = SubResource("SpriteFrames_ebjds")
-animation = &"Hurt"
-frame = 8
-frame_progress = 1.0
+animation = &"Jump"
+frame_progress = 0.28118572
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_4sjlk")
 }
+
+[node name="eggs" type="CanvasLayer" parent="."]
+
+[node name="healthBar" type="HBoxContainer" parent="eggs"]
+offset_left = 1104.0
+offset_top = 4.0
+offset_right = 1178.0
+offset_bottom = 81.0
+
+[node name="egg" type="TextureRect" parent="eggs/healthBar"]
+layout_mode = 2
+
+[node name="Egg" parent="eggs/healthBar/egg" instance=ExtResource("22_7ahtn")]
+position = Vector2(-1189, 2)
+
+[node name="egg2" type="TextureRect" parent="eggs/healthBar"]
+layout_mode = 2
+
+[node name="Egg" parent="eggs/healthBar/egg2" instance=ExtResource("22_7ahtn")]
+position = Vector2(-1100, 2)
+
+[node name="egg3" type="TextureRect" parent="eggs/healthBar"]
+layout_mode = 2
+
+[node name="Egg" parent="eggs/healthBar/egg3" instance=ExtResource("22_7ahtn")]
+position = Vector2(-1150, 2)
