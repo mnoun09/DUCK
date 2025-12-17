@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bddya1x0yq2s7"]
+[gd_scene load_steps=7 format=3 uid="uid://bddya1x0yq2s7"]
 
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="2_f8jrg"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="2_xocsq"]
 [ext_resource type="Script" uid="uid://kmpawv23wjga" path="res://start_button.gd" id="3_a7p3n"]
 [ext_resource type="PackedScene" uid="uid://bhurk772uo2x" path="res://SettingsButton.tscn" id="3_nj6lr"]
 [ext_resource type="PackedScene" uid="uid://dac2kxcbcwfck" path="res://CreditsButton.tscn" id="4_xocsq"]
+[ext_resource type="Script" uid="uid://bnk6ju8ebkspi" path="res://camera_2d.gd" id="6_reuxv"]
 
 [node name="startingScreen" type="Node2D"]
 
@@ -44,3 +45,8 @@ offset_bottom = 406.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(641, 358)
+script = ExtResource("6_reuxv")
+
+[node name="MyTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
