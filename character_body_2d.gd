@@ -2,9 +2,25 @@ extends CharacterBody2D
 
 
 const SPEED = 400.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -750.0
+var alive : bool = true
 
 @onready var animated_sprite = $AnimatedSprite2D
+
+var eggs_list : Array[TextureRect]
+var egg = 3 
+
+func _ready() -> void:
+	var hearts_parent = $healthBar/HBoxContainer
+	for child in hearts_parent.get_children():
+		eggs_list.append(child)
+	print(eggs_list)	
+	
+func update_hearts_display():
+	var broken = load("res://assets/images/BrokenEgg.png")
+	for i in range(eggs_list.size()):
+		eggs_list[i].visible = i < egg
+
 
 func _physics_process(delta: float) -> void:
 	if is_hit: 
@@ -41,6 +57,10 @@ func on_hit_by_meteor(damage: int):
 		return
 		
 	is_hit = true
+	if egg > 0:
+		egg-= 1
+		update_hearts_display()
+		
 	animated_sprite.play("Hurt")
 	#update_heart_display()
 	print("Playing animation:", animated_sprite.animation)
@@ -53,6 +73,3 @@ func on_hit_by_meteor(damage: int):
 
 	animated_sprite.play("Idle")
 	
-	
-var eggs_list : Array[TextureRect]
-var egg = 3 

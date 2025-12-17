@@ -22,9 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://gavaewxcoxiv" path="res://assets/images/player/Idle/Idle_animation-8.png" id="10_pylmc"]
 [ext_resource type="Texture2D" uid="uid://cn1h7qe2j5sf7" path="res://assets/images/player/Idle/Idle_animation-9.png" id="11_pbfsw"]
 [ext_resource type="Texture2D" uid="uid://kt3is4tugtk2" path="res://assets/images/player/Jump-1.png" id="21_jm5j8"]
-[ext_resource type="PackedScene" uid="uid://cbjv1rqcqq7m8" path="res://egg.tscn" id="22_7ahtn"]
 [ext_resource type="Texture2D" uid="uid://myqokkci6xpw" path="res://assets/images/player/Jump-2.png" id="22_7hik5"]
 [ext_resource type="Texture2D" uid="uid://bf3toffxg4aka" path="res://assets/images/player/Jump-3.png" id="23_qtqh7"]
+[ext_resource type="Texture2D" uid="uid://bfl5trv6bomh1" path="res://assets/images/Egg.png" id="25_jm5j8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
 radius = 39.0
@@ -285,28 +285,30 @@ libraries = {
 &"": SubResource("AnimationLibrary_4sjlk")
 }
 
-[node name="eggs" type="CanvasLayer" parent="."]
+[node name="healthBar" type="CanvasLayer" parent="."]
 
-[node name="healthBar" type="HBoxContainer" parent="eggs"]
-offset_left = 1104.0
-offset_top = 4.0
-offset_right = 1178.0
-offset_bottom = 81.0
+[node name="HBoxContainer" type="HBoxContainer" parent="healthBar"]
+offset_left = 1096.0
+offset_right = 1280.0
+offset_bottom = 77.0
 
-[node name="egg" type="TextureRect" parent="eggs/healthBar"]
+[node name="egg" type="TextureRect" parent="healthBar/HBoxContainer"]
 layout_mode = 2
 
-[node name="Egg" parent="eggs/healthBar/egg" instance=ExtResource("22_7ahtn")]
-position = Vector2(-1189, 2)
+[node name="Egg2" type="Sprite2D" parent="healthBar/HBoxContainer/egg"]
+position = Vector2(-320, 480)
+texture = ExtResource("25_jm5j8")
 
-[node name="egg2" type="TextureRect" parent="eggs/healthBar"]
+[node name="egg3" type="TextureRect" parent="healthBar/HBoxContainer"]
 layout_mode = 2
 
-[node name="Egg" parent="eggs/healthBar/egg2" instance=ExtResource("22_7ahtn")]
-position = Vector2(-1100, 2)
+[node name="Egg4" type="Sprite2D" parent="healthBar/HBoxContainer/egg3"]
+position = Vector2(-324, 424)
+texture = ExtResource("25_jm5j8")
 
-[node name="egg3" type="TextureRect" parent="eggs/healthBar"]
+[node name="egg2" type="TextureRect" parent="healthBar/HBoxContainer"]
 layout_mode = 2
 
-[node name="Egg" parent="eggs/healthBar/egg3" instance=ExtResource("22_7ahtn")]
-position = Vector2(-1150, 2)
+[node name="Egg3" type="Sprite2D" parent="healthBar/HBoxContainer/egg2"]
+position = Vector2(-328, 368)
+texture = ExtResource("25_jm5j8")
