@@ -47,6 +47,8 @@ offset_bottom = 406.0
 position = Vector2(641, 358)
 script = ExtResource("6_reuxv")
 
-[node name="MyTimer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[connection signal="timeout" from="Timer" to="Camera2D" method="_on_my_timer_timeout"]

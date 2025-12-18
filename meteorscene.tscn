@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://odki24oivns2"]
+[gd_scene load_steps=11 format=3 uid="uid://odki24oivns2"]
 
 [ext_resource type="Script" uid="uid://b8yw8u8xegio5" path="res://meteorscene.gd" id="1_b57mf"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_ieart"]
 [ext_resource type="Texture2D" uid="uid://dpr7km4uagn2p" path="res://assets/images/DUCK logo.png" id="3_72dmo"]
+[ext_resource type="Script" uid="uid://c20ru2h2uk64i" path="res://ow.gd" id="4_ieart"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_u3u7l"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_8453j"]
+[ext_resource type="PackedScene" uid="uid://dpnb1gnf8cioh" path="res://readyButton.tscn" id="6_b57mf"]
+[ext_resource type="PackedScene" uid="uid://cfhnysvdvm2u1" path="res://meteorLabel.tscn" id="7_ieart"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
 size = Vector2(103, 1885)
@@ -33,6 +36,16 @@ limit_left = 0
 limit_top = -10000
 limit_right = 1280
 limit_bottom = 740
+
+[node name="Ow" type="Label" parent="Player"]
+visible = false
+offset_left = -125.0
+offset_top = -141.0
+offset_right = -55.0
+offset_bottom = -113.0
+theme_override_font_sizes/font_size = 20
+text = "Ouch.."
+script = ExtResource("4_ieart")
 
 [node name="DuckLogo" type="Sprite2D" parent="."]
 visible = false
@@ -67,3 +80,18 @@ position = Vector2(446, 596)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
 position = Vector2(198.25, 994.75)
 shape = SubResource("RectangleShape2D_tvqiy")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Control2" parent="." instance=ExtResource("6_b57mf")]
+layout_mode = 1
+offset_left = 764.0
+offset_top = 1316.0
+offset_right = 764.0
+offset_bottom = 1316.0
+
+[node name="Node2D" parent="." instance=ExtResource("7_ieart")]
+position = Vector2(-2, 668)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

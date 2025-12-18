@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpnb1gnf8cioh"]
+
+[ext_resource type="Script" uid="uid://df3mnarvywxtv" path="res://ready_button.gd" id="1_61aw7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_61aw7")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 107.09417
+offset_bottom = 33.490463
+action_mode = 0
+
+[node name="ColorRect2" type="ColorRect" parent="Button"]
+layout_mode = 0
+offset_left = 0.36393738
+offset_top = -0.12776184
+offset_right = 103.12082
+offset_bottom = 31.751259
+color = Color(0.055936404, 0.24274841, 0.30769497, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Button"]
+layout_mode = 0
+offset_left = 2.8676682
+offset_top = 3.1863022
+offset_right = 99.86767
+offset_bottom = 29.186302
+color = Color(0.022744464, 0.14094532, 0.18447259, 1)
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 8.247032
+offset_top = 3.375969
+offset_right = 95.24703
+offset_bottom = 29.375969
+theme_override_font_sizes/font_size = 18
+text = "I'm ready!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

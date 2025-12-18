@@ -1,22 +1,15 @@
-extends Camera2D
-
-@onready var timer: Timer = $Timer
-var is_active: bool = false
+extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	is_active = true
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_active:
-		position.x -= 10 * delta
-		position.y += 10 * delta
-		print(position.x)
 	pass
 
 
-func _on_my_timer_timeout() -> void:
+func _on_button_pressed() -> void:
+	
 	pass # Replace with function body.
