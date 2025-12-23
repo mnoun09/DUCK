@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyishc8sx1ekn"]
+
+[ext_resource type="Texture2D" uid="uid://cxcd6uuw3byvi" path="res://assets/images/Rock_breaking-1.png" id="1_nnrwk"]
+[ext_resource type="Script" uid="uid://0a7ylq8llbsu" path="res://rock.gd" id="1_qfe6l"]
+[ext_resource type="Texture2D" uid="uid://dnvjjpoxp7yvf" path="res://assets/images/Rock_breaking-2.png" id="2_qfe6l"]
+[ext_resource type="Texture2D" uid="uid://celurua5yuk4h" path="res://assets/images/Rock_breaking-3.png" id="3_ch2gp"]
+[ext_resource type="Texture2D" uid="uid://vtberddcgbi7" path="res://assets/images/Rock_breaking-4.png" id="4_sx7sb"]
+[ext_resource type="Texture2D" uid="uid://bnlsyvbkmbrxc" path="res://assets/images/Rock_breaking-5.png" id="5_rcgop"]
+[ext_resource type="Texture2D" uid="uid://culinysyvfswx" path="res://assets/images/Rock_breaking-6.png" id="6_jlvx1"]
+[ext_resource type="Texture2D" uid="uid://gnb6rfal68s3" path="res://assets/images/Rock_breaking-7.png" id="7_0wbw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32eof"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nnrwk")
+}],
+"loop": true,
+"name": &"rock",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("1_nnrwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qfe6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ch2gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sx7sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rcgop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jlvx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0wbw6")
+}],
+"loop": false,
+"name": &"rockBreaking",
+"speed": 11.0
+}]
+
+[node name="rock" type="Area2D"]
+script = ExtResource("1_qfe6l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, 1)
+polygon = PackedVector2Array(-26.5, -95.2, -26.5, -93.2, -50, -80, -52.9, -80, -54.9, -75, -56.1, -75, -58.5, -63.2, -58.5, -41, -45.5, -32.1, -45.5, -30.300003, -37.699997, -29, -13.199997, -29, 29.600006, -40, 36.5, -40, 39.5, -44, 41.5, -44, 41.5, -59, 43.100006, -59, 37.5, -79, 37.5, -81.5, 6.5, -90.5, 6.5, -91.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_32eof")
+animation = &"rockBreaking"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

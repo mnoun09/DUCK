@@ -296,7 +296,11 @@ offset_bottom = 77.0
 layout_mode = 2
 
 [node name="Egg2" type="Sprite2D" parent="healthBar/HBoxContainer/egg"]
+<<<<<<< HEAD
 position = Vector2(-320, 480)
+=======
+position = Vector2(-320, 360)
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 texture = ExtResource("25_jm5j8")
 
 [node name="egg3" type="TextureRect" parent="healthBar/HBoxContainer"]
@@ -310,5 +314,9 @@ texture = ExtResource("25_jm5j8")
 layout_mode = 2
 
 [node name="Egg3" type="Sprite2D" parent="healthBar/HBoxContainer/egg2"]
+<<<<<<< HEAD
 position = Vector2(-328, 368)
+=======
+position = Vector2(-328, 488)
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 texture = ExtResource("25_jm5j8")

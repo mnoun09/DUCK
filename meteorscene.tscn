@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://odki24oivns2"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://odki24oivns2"]
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 
 [ext_resource type="Script" uid="uid://b8yw8u8xegio5" path="res://meteorscene.gd" id="1_b57mf"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_ieart"]
@@ -6,8 +10,12 @@
 [ext_resource type="Script" uid="uid://c20ru2h2uk64i" path="res://ow.gd" id="4_ieart"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_u3u7l"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_8453j"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://dpnb1gnf8cioh" path="res://readyButton.tscn" id="6_b57mf"]
 [ext_resource type="PackedScene" uid="uid://cfhnysvdvm2u1" path="res://meteorLabel.tscn" id="7_ieart"]
+=======
+[ext_resource type="PackedScene" uid="uid://dyt8esiyjmj74" path="res://meteor.tscn" id="7_b57mf"]
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
 size = Vector2(103, 1885)
@@ -74,6 +82,12 @@ position = Vector2(207, -157)
 position = Vector2(-255.5, 932.5)
 shape = SubResource("RectangleShape2D_khnw5")
 
+<<<<<<< HEAD
+=======
+[node name="Meteor" parent="BorderLeft" instance=ExtResource("7_b57mf")]
+position = Vector2(88, 1252)
+
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 [node name="BorderBottom" type="StaticBody2D" parent="."]
 position = Vector2(446, 596)
 
@@ -84,6 +98,7 @@ shape = SubResource("RectangleShape2D_tvqiy")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 
+<<<<<<< HEAD
 [node name="Control2" parent="." instance=ExtResource("6_b57mf")]
 layout_mode = 1
 offset_left = 764.0
@@ -94,4 +109,6 @@ offset_bottom = 1316.0
 [node name="Node2D" parent="." instance=ExtResource("7_ieart")]
 position = Vector2(-2, 668)
 
+=======
+>>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
