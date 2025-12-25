@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://odki24oivns2"]
+[gd_scene load_steps=10 format=3 uid="uid://odki24oivns2"]
 
 [ext_resource type="Script" uid="uid://b8yw8u8xegio5" path="res://meteorscene.gd" id="1_b57mf"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_ieart"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://c20ru2h2uk64i" path="res://ow.gd" id="4_ieart"]
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_u3u7l"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_8453j"]
-[ext_resource type="PackedScene" uid="uid://dpnb1gnf8cioh" path="res://readyButton.tscn" id="6_b57mf"]
 [ext_resource type="PackedScene" uid="uid://cfhnysvdvm2u1" path="res://meteorLabel.tscn" id="7_ieart"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
@@ -83,13 +82,6 @@ shape = SubResource("RectangleShape2D_tvqiy")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Control2" parent="." instance=ExtResource("6_b57mf")]
-layout_mode = 1
-offset_left = 764.0
-offset_top = 1316.0
-offset_right = 764.0
-offset_bottom = 1316.0
 
 [node name="Node2D" parent="." instance=ExtResource("7_ieart")]
 position = Vector2(-2, 668)

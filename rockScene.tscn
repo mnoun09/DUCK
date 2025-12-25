@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxxurbhp245kl"]
+[gd_scene load_steps=6 format=3 uid="uid://cxxurbhp245kl"]
 
 [ext_resource type="Script" uid="uid://dbrlqiqi6t7hu" path="res://rock_scene.gd" id="1_ardno"]
 [ext_resource type="PackedScene" uid="uid://mljw7a37ew4y" path="res://grass2.tscn" id="1_hfj7h"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="2_ptkmh"]
-[ext_resource type="PackedScene" uid="uid://cyishc8sx1ekn" path="res://rock.tscn" id="4_m84l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardno"]
 size = Vector2(162, 730)
@@ -21,11 +20,7 @@ script = ExtResource("1_ardno")
 position = Vector2(0, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_ptkmh")]
-position = Vector2(152, 504)
-
-[node name="rock" parent="." instance=ExtResource("4_m84l3")]
-visible = false
-position = Vector2(224, -40)
+position = Vector2(64, 632)
 
 [node name="border" type="StaticBody2D" parent="."]
 
@@ -44,19 +39,3 @@ shape = SubResource("RectangleShape2D_ardno")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
 position = Vector2(656, 680)
 shape = SubResource("RectangleShape2D_m84l3")
-
-[node name="rock2" parent="." instance=ExtResource("4_m84l3")]
-visible = false
-position = Vector2(408, 160)
-
-[node name="rock3" parent="." instance=ExtResource("4_m84l3")]
-visible = false
-position = Vector2(624, -600)
-
-[node name="rock4" parent="." instance=ExtResource("4_m84l3")]
-visible = false
-position = Vector2(904, 112)
-
-[node name="rock5" parent="." instance=ExtResource("4_m84l3")]
-visible = false
-position = Vector2(1048, -432)

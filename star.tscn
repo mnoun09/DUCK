@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://v7dqxe6o7rum"]
+[gd_scene load_steps=3 format=3 uid="uid://v7dqxe6o7rum"]
 
 [ext_resource type="Texture2D" uid="uid://hcq7vcs7pw2w" path="res://assets/images/Star.png" id="1_46ao5"]
+[ext_resource type="Script" uid="uid://b2mvcqbglo0bp" path="res://star.gd" id="1_e2x7v"]
 
-[node name="Node2D" type="Area2D"]
+[node name="star" type="Area2D"]
+top_level = true
+script = ExtResource("1_e2x7v")
 
 [node name="Star" type="Sprite2D" parent="."]
 position = Vector2(192, 56)

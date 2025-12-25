@@ -5,6 +5,7 @@ extends Area2D
 @export var damage: = 1
 var moving := true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animated_sprite.play("default")

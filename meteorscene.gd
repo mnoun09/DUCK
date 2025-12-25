@@ -1,10 +1,15 @@
 extends ColorRect
 
+@onready var player = $"Player"
 var meteor = preload("res://meteor.tscn")
+var star = preload("res://star.tscn")
+var points : int = 1
+var score : int = 0
+var stop : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	scoring()
 	generate_meteor()
 	pass # Replace with function body.
 
@@ -30,3 +35,19 @@ func add_meteor(obs, x, y):
 func _on_timer_timeout() -> void:
 	
 	pass # Replace with function body.
+
+func scoring():
+	while player.alive and !stop:
+		await get_tree().create_timer(.1).timeout
+		score+=points
+		print (score)
+		spawn_star()
+	
+func spawn_star():
+	if score == 50:
+		stop = true
+		var starObject = star.instantiate()
+		starObject.position = Vector2i(1000, 580)
+		add_child(starObject)
+		print("spawned")
+		
