@@ -8,10 +8,7 @@ func _ready() -> void:
 	generate_meteor()
 	pass # Replace with function body.
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

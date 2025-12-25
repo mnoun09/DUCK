@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dolbpky6lbtcg"]
+
+[ext_resource type="Texture2D" uid="uid://b4hfoj5ei70s" path="res://assets/images/BrokenEgg.png" id="1_pdmdx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qkn2"]
+atlas = ExtResource("1_pdmdx")
+region = Rect2(1083, 76, 36, 47)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BrokenEgg" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = SubResource("AtlasTexture_1qkn2")

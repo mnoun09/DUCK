@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -750.0
 var alive : bool = true
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var rockScene = $".."
 
 var eggs_list : Array[TextureRect]
 var egg = 3 
@@ -17,9 +18,10 @@ func _ready() -> void:
 	print(eggs_list)	
 	
 func update_hearts_display():
-	var broken = load("res://assets/images/BrokenEgg.png")
 	for i in range(eggs_list.size()):
 		eggs_list[i].visible = i < egg
+	
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -60,6 +62,9 @@ func on_hit_by_meteor(damage: int):
 	if egg > 0:
 		egg-= 1
 		update_hearts_display()
+	
+	if egg <= 0:
+		rockScene.spawn = false
 		
 	animated_sprite.play("Hurt")
 	#update_heart_display()

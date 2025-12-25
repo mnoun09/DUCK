@@ -23,10 +23,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body):
 	if body is CharacterBody2D:
-<<<<<<< HEAD
 		
-=======
->>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 		body.on_hit_by_meteor(damage)
 		print ("hit")
 		animated_sprite.play("default_1")
@@ -35,8 +32,5 @@ func _on_body_entered(body):
 		await animated_sprite.animation_finished
 		animated_sprite.stop()
 		queue_free()
-<<<<<<< HEAD
 		
-=======
->>>>>>> 62955cd (Attempted to add dialogue, added a new level)
 	pass # Replace with function body.
