@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxxurbhp245kl"]
+[gd_scene load_steps=7 format=3 uid="uid://cxxurbhp245kl"]
 
 [ext_resource type="Script" uid="uid://dbrlqiqi6t7hu" path="res://rock_scene.gd" id="1_ardno"]
 [ext_resource type="PackedScene" uid="uid://mljw7a37ew4y" path="res://grass2.tscn" id="1_hfj7h"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="2_ptkmh"]
+[ext_resource type="PackedScene" uid="uid://eet4kn8260k6" path="res://rock_label.tscn" id="4_m84l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardno"]
 size = Vector2(162, 730)
@@ -39,3 +40,6 @@ shape = SubResource("RectangleShape2D_ardno")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
 position = Vector2(656, 680)
 shape = SubResource("RectangleShape2D_m84l3")
+
+[node name="rockLabel" parent="." instance=ExtResource("4_m84l3")]
+position = Vector2(0, -184)

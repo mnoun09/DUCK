@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfhnysvdvm2u1"]
+[gd_scene load_steps=4 format=3 uid="uid://eet4kn8260k6"]
 
-[ext_resource type="Script" uid="uid://cyxnbmlj7kv6c" path="res://meteor_label.gd" id="1_21q4s"]
-[ext_resource type="FontFile" uid="uid://b4wc42yv1dd0i" path="res://Chewy-Regular.ttf" id="1_mlxjm"]
+[ext_resource type="Script" uid="uid://de5axjp112dot" path="res://rock_label.gd" id="1_lo852"]
+[ext_resource type="FontFile" uid="uid://b4wc42yv1dd0i" path="res://Chewy-Regular.ttf" id="2_ewc2m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdtqy"]
 bg_color = Color(0.05490196, 0.24313726, 0.30588236, 1)
 
-[node name="MeteorLabel" type="Node2D" groups=["label"]]
-script = ExtResource("1_21q4s")
+[node name="rockLabel" type="Node2D" groups=["label"]]
+script = ExtResource("1_lo852")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 416.0
@@ -28,20 +28,20 @@ offset_left = 424.0
 offset_top = 560.0
 offset_right = 856.0
 offset_bottom = 617.0
-theme_override_fonts/font = ExtResource("1_mlxjm")
+theme_override_fonts/font = ExtResource("2_ewc2m")
 theme_override_font_sizes/font_size = 37
-text = "The sky is falling!"
+text = "Phew.. that was close"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = 760.0
+offset_left = 712.0
 offset_top = 640.0
-offset_right = 864.0
+offset_right = 861.0
 offset_bottom = 667.0
-theme_override_fonts/font = ExtResource("1_mlxjm")
+theme_override_fonts/font = ExtResource("2_ewc2m")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_fdtqy")
-text = "Oh no!"
+text = "Glad that's over"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

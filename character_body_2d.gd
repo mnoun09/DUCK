@@ -20,9 +20,6 @@ func _ready() -> void:
 func update_hearts_display():
 	for i in range(eggs_list.size()):
 		eggs_list[i].visible = i < egg
-	
-	
-
 
 func _physics_process(delta: float) -> void:
 	if is_hit: 
@@ -68,6 +65,7 @@ func on_hit_by_meteor(damage: int):
 		alive = false
 		
 	animated_sprite.play("Hurt")
+	MeteorLabel.meteor_hit()
 	#update_heart_display()
 	print("Playing animation:", animated_sprite.animation)
 

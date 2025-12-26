@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3 uid="uid://cgem38pf30i6p"]
+
+[ext_resource type="Texture2D" uid="uid://dcyifh38oqw7a" path="res://skyBreaking-1.png" id="1_bdmpy"]
+[ext_resource type="Script" uid="uid://bjnps1cxsowo3" path="res://sky_breaking.gd" id="1_ntmbu"]
+[ext_resource type="Texture2D" uid="uid://d1xeb5im52f5t" path="res://skyBreaking-2.png" id="2_ntmbu"]
+[ext_resource type="Texture2D" uid="uid://d0l2ws2joqbwe" path="res://skyBreaking-3.png" id="3_6o7a4"]
+[ext_resource type="Texture2D" uid="uid://0j4ylg1th3fq" path="res://skyBreaking-4.png" id="4_c633v"]
+[ext_resource type="Texture2D" uid="uid://cfxyuafmji1p7" path="res://skyBreaking-5.png" id="5_q60gd"]
+[ext_resource type="Texture2D" uid="uid://dmigixbpgod6u" path="res://skyBreaking-6.png" id="6_gwt4u"]
+[ext_resource type="Texture2D" uid="uid://ceu65kb58fqnc" path="res://skyBreaking-7.png" id="7_1eg60"]
+[ext_resource type="Texture2D" uid="uid://d4a6kty0jldr2" path="res://skyBreaking-8.png" id="8_xxr0p"]
+[ext_resource type="Texture2D" uid="uid://csr1rgqv3gx1i" path="res://skyBreaking-9.png" id="9_5cj2k"]
+[ext_resource type="Texture2D" uid="uid://5lr72q0lioi4" path="res://skyBreaking-10.png" id="10_0puc4"]
+[ext_resource type="Texture2D" uid="uid://c1g0ogx7fhxw3" path="res://skyBreaking-11.png" id="11_crkgw"]
+[ext_resource type="Script" uid="uid://bnk6ju8ebkspi" path="res://camera_2d.gd" id="13_6o7a4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_625n5"]
+animations = [{
+"frames": [{
+"duration": 1.6,
+"texture": ExtResource("1_bdmpy")
+}, {
+"duration": 1.6,
+"texture": ExtResource("2_ntmbu")
+}, {
+"duration": 1.6,
+"texture": ExtResource("3_6o7a4")
+}, {
+"duration": 1.6,
+"texture": ExtResource("4_c633v")
+}, {
+"duration": 1.6,
+"texture": ExtResource("5_q60gd")
+}, {
+"duration": 1.6,
+"texture": ExtResource("6_gwt4u")
+}, {
+"duration": 1.6,
+"texture": ExtResource("7_1eg60")
+}, {
+"duration": 1.6,
+"texture": ExtResource("8_xxr0p")
+}, {
+"duration": 1.6,
+"texture": ExtResource("9_5cj2k")
+}, {
+"duration": 1.6,
+"texture": ExtResource("10_0puc4")
+}, {
+"duration": 1.6,
+"texture": ExtResource("11_crkgw")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ntmbu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 1336.0
+offset_bottom = 840.0
+color = Color(0.627451, 0.87058824, 0.972549, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+sprite_frames = SubResource("SpriteFrames_625n5")
+animation = &"breaking"
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+position = Vector2(640, 360)
+zoom = Vector2(1.1, 1.1)
+script = ExtResource("13_6o7a4")
