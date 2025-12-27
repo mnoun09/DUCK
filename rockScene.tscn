@@ -42,4 +42,4 @@ position = Vector2(656, 680)
 shape = SubResource("RectangleShape2D_m84l3")
 
 [node name="rockLabel" parent="." instance=ExtResource("4_m84l3")]
-position = Vector2(0, -184)
+position = Vector2(0, -216)

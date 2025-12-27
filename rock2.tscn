@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3rv6m1ll8egv"]
+
+[ext_resource type="Texture2D" uid="uid://cmserpxiutgaa" path="res://assets/images/Rock2-1.png" id="1_5tqql"]
+[ext_resource type="Script" uid="uid://5ymqj4o5jb5p" path="res://rock_2.gd" id="1_snd5d"]
+[ext_resource type="Texture2D" uid="uid://crxxfrjnoyldy" path="res://assets/images/Rock2-2.png" id="2_snd5d"]
+[ext_resource type="Texture2D" uid="uid://ceype071huasd" path="res://assets/images/Rock2-3.png" id="3_5je4e"]
+[ext_resource type="Texture2D" uid="uid://l5uo3e5vievi" path="res://assets/images/Rock2-4.png" id="4_mgxnx"]
+[ext_resource type="Texture2D" uid="uid://ms4q2x3533dq" path="res://assets/images/Rock2-5.png" id="5_pxslq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcn6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5tqql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_snd5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5je4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mgxnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxslq")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5tqql")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_snd5d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-19, -45, -19, -43.7, -26.400002, -42, -28.5, -42, -33.5, -26, -35.300003, -26, -33, -9.699997, -33, -6.199997, -30.800003, -4, -3.199997, -4, 7.800003, -14, 10.400002, -14, 7, -31.400002, 7, -33.9, -4, -43, -4, -45)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pcn6k")
+animation = &"breaking"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
