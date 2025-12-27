@@ -3,6 +3,7 @@ extends ColorRect
 @onready var player = $"Player"
 var meteor = preload("res://meteor.tscn")
 var star = preload("res://star.tscn")
+@onready var label = $"MeteorLabel"
 var points : int = 1
 var score : int = 0
 var stop : bool = false
@@ -48,5 +49,6 @@ func spawn_star():
 		var starObject = star.instantiate()
 		starObject.position = Vector2i(1000, 580)
 		add_child(starObject)
+		label.star_spawned()
 		print("spawned")
 		

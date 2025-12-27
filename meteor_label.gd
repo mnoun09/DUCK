@@ -26,3 +26,6 @@ func _on_button_pressed() -> void:
 	
 func meteor_hit() -> void:
 	my_label.text = "ouch.."
+	
+func star_spawned() -> void:
+	my_label.text = "Huh, a star??"

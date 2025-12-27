@@ -7,6 +7,7 @@ var alive : bool = true
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var rockScene = $".."
+@onready var label = $"../MeteorLabel"
 
 var eggs_list : Array[TextureRect]
 var egg = 3 
@@ -53,6 +54,7 @@ var is_hit := false
 
 func on_hit_by_meteor(damage: int):
 	if is_hit:
+		
 		return
 		
 	is_hit = true
@@ -64,8 +66,8 @@ func on_hit_by_meteor(damage: int):
 		rockScene.spawn = false
 		alive = false
 		
+	#label.meteor_hit()
 	animated_sprite.play("Hurt")
-	MeteorLabel.meteor_hit()
 	#update_heart_display()
 	print("Playing animation:", animated_sprite.animation)
 

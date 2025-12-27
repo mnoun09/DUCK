@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://odki24oivns2"]
+[gd_scene load_steps=10 format=3 uid="uid://odki24oivns2"]
 
 [ext_resource type="Script" uid="uid://b8yw8u8xegio5" path="res://meteorscene.gd" id="1_b57mf"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_ieart"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b7uqdfclsfcen" path="res://StartButton.tscn" id="4_u3u7l"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="5_8453j"]
 [ext_resource type="PackedScene" uid="uid://cfhnysvdvm2u1" path="res://meteorLabel.tscn" id="7_ieart"]
-[ext_resource type="PackedScene" uid="uid://b3rv6m1ll8egv" path="res://rock2.tscn" id="8_ieart"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khnw5"]
 size = Vector2(103, 1885)
@@ -87,8 +86,5 @@ shape = SubResource("RectangleShape2D_tvqiy")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Node2D" parent="." instance=ExtResource("8_ieart")]
-position = Vector2(290, 792)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
