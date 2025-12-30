@@ -1,6 +1,7 @@
 extends Node2D
 @onready var my_label: Label = $Label
 @onready var my_button: Button = $Button
+@onready var box: Node2D = $"."
 @onready var rock = $".."
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,8 @@ func _on_button_pressed() -> void:
 	await get_tree().create_timer(2).timeout
 	my_label.add_theme_font_size_override("font_size", 25)
 	my_label.text = "But watch out, things are still falling"
+	await get_tree().create_timer(2).timeout
 	rock.spawning_rock()
 	rock.scoring()
+	box.hide()
 	pass # Replace with function body.

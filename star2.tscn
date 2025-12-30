@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs2fudmjjhig8"]
+
+[ext_resource type="Texture2D" uid="uid://hcq7vcs7pw2w" path="res://assets/images/Star.png" id="1_bl57s"]
+[ext_resource type="Script" uid="uid://8n6bood35nvd" path="res://star_2.gd" id="1_kon4q"]
+
+[node name="star" type="Area2D"]
+top_level = true
+script = ExtResource("1_kon4q")
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(192, 56)
+texture = ExtResource("1_bl57s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(192, 56)
+polygon = PackedVector2Array(-3.2999992, -32.4, -6, -31.4, -6, -29.3, -13, -5.299999, -13, -4.299999, -26, 2.7999992, -26, 7.4000015, -16.4, 11, -14.3, 11, -4.299999, 34, 0.39999962, 34, 9, 11.400002, 9, 10.200001, 18.400002, 6, 20.2, 6, 21.3, 3.7999992, 18, -0.70000076, 18, -2.5999985, 6.5, -5, 2, -20.3, 2, -25.7)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

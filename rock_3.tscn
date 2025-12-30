@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0ccjt7cbeq26"]
+
+[ext_resource type="Script" uid="uid://cioj12y40fqar" path="res://rock_3.gd" id="1_lqj2m"]
+[ext_resource type="Texture2D" uid="uid://b4oh53aur5p87" path="res://assets/images/Rock3-1.png" id="2_xquwl"]
+[ext_resource type="Texture2D" uid="uid://cln0mspkjns0p" path="res://assets/images/Rock3-2.png" id="3_sobf3"]
+[ext_resource type="Texture2D" uid="uid://cxl42k6e8vb1e" path="res://assets/images/Rock3-3.png" id="4_16ilf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o71j5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sobf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_16ilf")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xquwl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="rock3" type="Area2D"]
+script = ExtResource("1_lqj2m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(10, -27, 10, -25.800003, -7, -23.800003, -7, -23.199997, -31.900002, -25, -39.8, -25, -45.8, -19, -47.9, -19, -48.9, -2, -50.4, -2, -49, 6.300003, -49, 8.599998, -40, 10.599998, -40, 11.900002, -25.099998, 13, -8.900002, 13, 26.300003, 8, 36.399994, 8, 38.399994, 2, 40.100006, 2, 39, -15.099998, 39, -19.199997, 28, -25.300003, 28, -27)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o71j5")
+frame_progress = 0.5242753
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

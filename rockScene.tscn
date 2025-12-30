@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxxurbhp245kl"]
 
 [ext_resource type="Script" uid="uid://dbrlqiqi6t7hu" path="res://rock_scene.gd" id="1_ardno"]
-[ext_resource type="PackedScene" uid="uid://mljw7a37ew4y" path="res://grass2.tscn" id="1_hfj7h"]
+[ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_m84l3"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="2_ptkmh"]
 [ext_resource type="PackedScene" uid="uid://eet4kn8260k6" path="res://rock_label.tscn" id="4_m84l3"]
 
@@ -13,15 +13,33 @@ size = Vector2(1298, 66)
 
 [node name="rockScene" type="ColorRect"]
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 928.0
 color = Color(0.023529412, 0.14117648, 0.18431373, 1)
 script = ExtResource("1_ardno")
 
-[node name="grass" parent="." instance=ExtResource("1_hfj7h")]
-position = Vector2(0, -8)
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -448.0
+offset_right = 1280.0
+offset_bottom = 864.0
+color = Color(0.028362116, 0.15252784, 0.19864342, 1)
+
+[node name="rockLabel" parent="." instance=ExtResource("4_m84l3")]
+position = Vector2(0, -192)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_m84l3")]
+position = Vector2(0, -16)
 
 [node name="Player" parent="." instance=ExtResource("2_ptkmh")]
-position = Vector2(64, 632)
+position = Vector2(656, 608)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -240)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = -10000
+limit_right = 1280
+limit_bottom = 740
 
 [node name="border" type="StaticBody2D" parent="."]
 
@@ -40,6 +58,3 @@ shape = SubResource("RectangleShape2D_ardno")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
 position = Vector2(656, 680)
 shape = SubResource("RectangleShape2D_m84l3")
-
-[node name="rockLabel" parent="." instance=ExtResource("4_m84l3")]
-position = Vector2(0, -216)
