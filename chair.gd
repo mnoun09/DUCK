@@ -4,7 +4,7 @@ extends Area2D
 
 @export var damage: = 1
 var moving := true
-
+var hit := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,23 +14,29 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not moving: 
-		animated_sprite.play("crash")
-		return
-		
-	position.x -= 300 * delta
-	position.y += 300 * delta
+	if moving:
+		position.y += 500 * delta
+		pass
+	if hit:
+		position.y += 80 * delta
+		pass
 	pass
 
-func _on_body_entered(body):
+
+func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		body.on_hit_by_meteor(damage)
 		print ("hit")
-		animated_sprite.play("default_1")
-		await animated_sprite.animation_finished
 		moving = false
+		hit = true
+		animated_sprite.play("breaking")
 		await animated_sprite.animation_finished
 		animated_sprite.stop()
 		queue_free()
-		
+	moving = false
+	hit = true
+	animated_sprite.play("breaking")
+	await animated_sprite.animation_finished
+	animated_sprite.stop()
+	queue_free()
 	pass # Replace with function body.

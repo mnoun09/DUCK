@@ -8,7 +8,11 @@ var rock = preload("res://rock.tscn")
 var rock2 = preload("res://rock2.tscn")
 var rock3 = preload("res://rock_3.tscn")
 var star = preload("res://star2.tscn")
+var chair = preload("res://chair.tscn")
+var meteor = preload("res://meteor.tscn")
+var bird = preload("res://bird.tscn")
 var totalScore : int = 0
+var collectedScore : int = 0
 var obstacle_types := [rock, rock2, rock3]
 var obstacles : Array
 var spawn := true
@@ -27,20 +31,35 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if bg.color.is_equal_approx(targetColor) or totalScore == 500:
+	if bg.color.is_equal_approx(targetColor) or collectedScore == 500:
 		spawn = false
 		stopScoring = true
 		print ("color hit")
 	pass
 
 func generate_rock():
+	print (obstacle_types)
 	#if obstacles.is_empty():
 	var obs_type = obstacle_types[randi() % obstacle_types.size()]
-	var obs
+	var obs 
+	var obs_y : int
+	
 	obs = obs_type.instantiate()
-	var obs_x : int = randi_range(20, 1250)
-	var obs_y : int = randi_range(-100, 0)
-	add_rock(obs, obs_x, obs_y)
+	var obs_x : int 
+	if obs.scene_file_path == "res://meteor.tscn":
+		print("obs = meteor")
+		obs_x = randi_range(0, 800)
+		obs_y  = randi_range(-500, -300)
+	elif obs.scene_file_path == "res://bird.tscn":
+		print("obs = bird")
+		obs_x = randi_range(1280, 1300)
+		obs_y  = randi_range(400, 500)
+	else:
+		obs_x = randi_range(20, 1250)
+		obs_y = randi_range(-100, 0)
+	print (obs)
+	print (meteor)
+	add_rock(obs, obs_x, obs_y)		
 	
 func add_rock(obs, x, y):
 	obs.position = Vector2i(x, y)
@@ -56,9 +75,17 @@ func spawning_rock():
 		
 		
 func scoring():
+	
 	while player.alive and spawn:
 		await get_tree().create_timer(.1).timeout
-		score+=points
+		score+= points
+		totalScore+= points
+		if totalScore == 50:
+			obstacle_types.append(bird)
+		elif totalScore == 100:
+			obstacle_types.append(chair)
+		elif totalScore == 200:
+			obstacle_types.append(meteor)
 		print (score)
 		spawn_star()
 		if spawnSpeed >= 1.0:
@@ -75,5 +102,6 @@ func spawn_star():
 		print("spawned")
 		score = 0
 		print("score reset")
-		totalScore += 50
+		collectedScore += 50
+		
 	

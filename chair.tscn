@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtk248e20apnh"]
+
+[ext_resource type="Script" uid="uid://wh6q5woaij76" path="res://chair.gd" id="1_humtb"]
+[ext_resource type="Texture2D" uid="uid://bkmiiyavvxxgn" path="res://assets/images/Chair-1.png" id="1_no86n"]
+[ext_resource type="Texture2D" uid="uid://crjhli2wd1gch" path="res://assets/images/Chair-2.png" id="2_humtb"]
+[ext_resource type="Texture2D" uid="uid://nyrsxb4aofjg" path="res://assets/images/Chair-3.png" id="3_whm26"]
+[ext_resource type="Texture2D" uid="uid://l8yrbce1krwy" path="res://assets/images/Chair-4.png" id="4_ylwc1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l25lx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_no86n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_humtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_whm26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ylwc1")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_no86n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chair" type="Area2D"]
+script = ExtResource("1_humtb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -56)
+scale = Vector2(0.72999996, 0.778)
+sprite_frames = SubResource("SpriteFrames_l25lx")
+animation = &"breaking"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(15.999998, -56.000008)
+scale = Vector2(0.7068434, 0.7944656)
+polygon = PackedVector2Array(-71, -87, -71, -86, -81.600006, -86, -82.5, -82, -84, -82, -90, 164, -90, 174.20001, -50.800003, 171, -45, 171, -45, 86, -44, 86, 1, 87, 1.699997, 87, 8, 89.70001, 9, 165, 9, 173.9, 29.899994, 175, 44.899994, 175, 46.899994, 104, 48.100006, 104, 47, 67.899994, 47, 56, -47.100006, 56, -52, -71.100006, -52, -80.600006, -54, -83.7, -54, -87)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

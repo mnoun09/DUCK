@@ -65,12 +65,11 @@ radius = 5.0
 script = ExtResource("1_fwwpj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(236, 130)
 sprite_frames = SubResource("SpriteFrames_5cjlg")
 animation = &"falling"
 frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(237, 138)
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_y0scg")
