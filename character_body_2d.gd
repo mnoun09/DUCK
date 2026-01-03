@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var dookie = preload("res://splatter.tscn")
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -450.0
@@ -79,3 +80,20 @@ func on_hit_by_meteor(damage: int):
 
 	animated_sprite.play("Idle")
 	
+func generate_splatter():
+	var obs
+	obs = dookie.instantiate()
+	var obs_x : int = position.x
+	var obs_y : int = position.y - 180
+	add_splatter(obs, obs_x, obs_y)
+	
+func add_splatter(obs, x, y):
+	obs.global_position = Vector2(x, y)
+	$Camera2D.add_child(obs)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	#print ("splat")
+	#if body is Dookie:
+		#generate_splatter()
+	pass # Replace with function body.

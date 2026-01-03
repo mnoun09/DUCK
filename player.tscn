@@ -27,10 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://bfl5trv6bomh1" path="res://assets/images/Egg.png" id="25_jm5j8"]
 [ext_resource type="PackedScene" uid="uid://dolbpky6lbtcg" path="res://brokenEgg.tscn" id="26_7hik5"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
-radius = 39.0
-height = 130.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
 atlas = ExtResource("2_5tmop")
 region = Rect2(783, 0, 143, 178)
@@ -260,6 +256,10 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1dt5"]
+radius = 39.0
+height = 130.0
+
 [sub_resource type="Animation" id="Animation_lhvu3"]
 resource_name = "PlayerRight"
 
@@ -271,15 +271,21 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_i3pqv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -54)
-shape = SubResource("CapsuleShape2D_y1dt5")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, -60)
 sprite_frames = SubResource("SpriteFrames_ebjds")
 animation = &"Jump"
 frame_progress = 0.28118572
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -54)
+shape = SubResource("CapsuleShape2D_y1dt5")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -54)
+shape = SubResource("CapsuleShape2D_y1dt5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -322,3 +328,5 @@ layout_mode = 2
 [node name="Egg3" type="Sprite2D" parent="healthBar/HBoxContainer/egg2"]
 position = Vector2(-328, 480)
 texture = ExtResource("25_jm5j8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

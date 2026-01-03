@@ -33,7 +33,7 @@ position = Vector2(0, -16)
 [node name="Player" parent="." instance=ExtResource("2_ptkmh")]
 position = Vector2(656, 608)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["player_camera"]]
 position = Vector2(0, -240)
 zoom = Vector2(1.2, 1.2)
 limit_left = 0

@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bshdjry3rf0xe"]
+[gd_scene load_steps=8 format=3 uid="uid://bshdjry3rf0xe"]
 
 [ext_resource type="Texture2D" uid="uid://be1w5ivk10y27" path="res://assets/images/Bird/Bird1.png" id="1_cchwj"]
 [ext_resource type="Texture2D" uid="uid://dvpyqnb3bwqxk" path="res://assets/images/Bird/Bird2.png" id="2_6ljjq"]
 [ext_resource type="Texture2D" uid="uid://bhly7mjyf5muf" path="res://assets/images/Bird/Bird3.png" id="3_axl6x"]
 [ext_resource type="Texture2D" uid="uid://btxv2holarixh" path="res://assets/images/Bird/Bird4.png" id="4_yr30m"]
 [ext_resource type="Script" uid="uid://bkdi8ummowydi" path="res://bird.gd" id="5_6ljjq"]
-[ext_resource type="PackedScene" uid="uid://dyi37cq33p2mu" path="res://birdDookie.tscn" id="6_axl6x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2o5yp"]
 animations = [{
@@ -31,7 +30,7 @@ animations = [{
 radius = 21.260292
 
 [node name="bird" type="Area2D"]
-position = Vector2(-992, -80)
+position = Vector2(8, 224)
 script = ExtResource("5_6ljjq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -42,6 +41,3 @@ frame_progress = 0.25223342
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, -224)
 shape = SubResource("CircleShape2D_6ljjq")
-
-[node name="birdDookie" parent="." instance=ExtResource("6_axl6x")]
-position = Vector2(1056, 144)

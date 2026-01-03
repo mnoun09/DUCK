@@ -53,7 +53,7 @@ func generate_rock():
 	elif obs.scene_file_path == "res://bird.tscn":
 		print("obs = bird")
 		obs_x = randi_range(1280, 1300)
-		obs_y  = randi_range(400, 500)
+		obs_y  = randi_range(350, 450)
 	else:
 		obs_x = randi_range(20, 1250)
 		obs_y = randi_range(-100, 0)

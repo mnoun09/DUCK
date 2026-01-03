@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="Chair" type="Area2D"]
+visibility_layer = 2
 script = ExtResource("1_humtb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

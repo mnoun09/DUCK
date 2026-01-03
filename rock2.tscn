@@ -45,6 +45,7 @@ script = ExtResource("1_snd5d")
 polygon = PackedVector2Array(-19, -45, -19, -43.7, -26.400002, -42, -28.5, -42, -33.5, -26, -35.300003, -26, -33, -9.699997, -33, -6.199997, -30.800003, -4, -3.199997, -4, 7.800003, -14, 10.400002, -14, 7, -31.400002, 7, -33.9, -4, -43, -4, -45)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_pcn6k")
 animation = &"breaking"
 

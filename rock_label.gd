@@ -24,7 +24,7 @@ func _on_button_pressed() -> void:
 	my_button.hide()
 	my_label.add_theme_font_size_override("font_size", 30)
 	my_label.text = "Yes, that must be it!"
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	my_label.add_theme_font_size_override("font_size", 26)
 	my_label.text = "The star is piecing the sky back together!"
 	await get_tree().create_timer(4).timeout

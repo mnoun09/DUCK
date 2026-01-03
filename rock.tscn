@@ -47,6 +47,7 @@ animations = [{
 }]
 
 [node name="rock" type="Area2D"]
+visibility_layer = 2
 script = ExtResource("1_qfe6l")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
