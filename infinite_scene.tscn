@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://ehqdosjpfy0u"]
+
+[ext_resource type="Script" uid="uid://cru70kv67g8xv" path="res://infinite_scene.gd" id="1_clnn1"]
+[ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_7dwoj"]
+[ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="3_swsxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ardno"]
+size = Vector2(162, 730)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m84l3"]
+size = Vector2(1298, 66)
+
+[node name="infiniteScene" type="ColorRect"]
+offset_right = 1280.0
+offset_bottom = 928.0
+color = Color(0.627451, 0.87058824, 0.972549, 1)
+script = ExtResource("1_clnn1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -448.0
+offset_right = 1280.0
+offset_bottom = 864.0
+color = Color(0.627451, 0.87058824, 0.972549, 1)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_7dwoj")]
+position = Vector2(0, -16)
+
+[node name="Player" parent="." instance=ExtResource("3_swsxd")]
+position = Vector2(656, 608)
+
+[node name="Camera2D" type="Camera2D" parent="Player" groups=["player_camera"]]
+position = Vector2(0, -240)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = -10000
+limit_right = 1280
+limit_bottom = 740
+
+[node name="border" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border"]
+position = Vector2(-80, 360)
+shape = SubResource("RectangleShape2D_ardno")
+
+[node name="border2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="border2"]
+position = Vector2(1360, 360)
+shape = SubResource("RectangleShape2D_ardno")
+
+[node name="border3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
+position = Vector2(656, 680)
+shape = SubResource("RectangleShape2D_m84l3")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bimkxe65t6x5k"]
+
+[ext_resource type="Texture2D" uid="uid://3kcm8fxy5dhn" path="res://assets/images/Congrats-1.png" id="1_yafxi"]
+[ext_resource type="PackedScene" uid="uid://fdv37qfgpg7v" path="res://homeButton.tscn" id="3_yafxi"]
+[ext_resource type="Texture2D" uid="uid://bhwa5kg7bphc6" path="res://assets/images/Congrats-4.png" id="4_inqqh"]
+[ext_resource type="PackedScene" uid="uid://s2pwxjiei00n" path="res://contButton.tscn" id="4_sved5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -48.0
+offset_top = -64.0
+offset_right = 1352.0
+offset_bottom = 824.0
+color = Color(0.627451, 0.87058824, 0.972549, 1)
+
+[node name="Congrats1" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = ExtResource("1_yafxi")
+
+[node name="Congrats4" type="Sprite2D" parent="."]
+position = Vector2(656, 408)
+texture = ExtResource("4_inqqh")
+
+[node name="Control" parent="." instance=ExtResource("3_yafxi")]
+offset_left = 752.0
+offset_top = 264.0
+offset_right = 752.0
+offset_bottom = 264.0
+
+[node name="Control2" parent="." instance=ExtResource("4_sved5")]
+offset_left = 752.0
+offset_top = 432.0
+offset_right = 752.0
+offset_bottom = 432.0

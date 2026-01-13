@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://fdv37qfgpg7v"]
+
+[ext_resource type="Texture2D" uid="uid://brs2k6q603vob" path="res://assets/images/congratsHomeButton.png" id="1_b8n82"]
+[ext_resource type="Script" uid="uid://c630yml5w41ht" path="res://home_button.gd" id="2_xrxa4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrxa4"]
+atlas = ExtResource("1_b8n82")
+region = Rect2(711, 442, 387, 117)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_xrxa4")
+script = ExtResource("2_xrxa4")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

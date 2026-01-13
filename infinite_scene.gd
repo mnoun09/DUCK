@@ -26,14 +26,14 @@ var gameWon: = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawning_rock()
+	scoring()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if bg.color.is_equal_approx(targetColor) or collectedScore == 500:
-		spawn = false
-		print ("color hit")
+	
 	pass
 
 func generate_rock():

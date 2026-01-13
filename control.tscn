@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2pfxr2s5w6kg"]
+
+[ext_resource type="Texture2D" uid="uid://cdgt6l3ioorw" path="res://assets/images/CongratsContButton.png" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://hki4igiyjvpv" path="res://cont_Button.gd" id="2_qtu10"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4bf"]
+atlas = ExtResource("1_62e2m")
+region = Rect2(712, 289, 385, 119)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_ee4bf")
+script = ExtResource("2_qtu10")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
