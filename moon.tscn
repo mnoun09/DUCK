@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca5o543ki3opf"]
+
+[ext_resource type="Texture2D" uid="uid://bjn7rga3w76gq" path="res://assets/images/Moon-1.png" id="1_1r202"]
+[ext_resource type="Script" uid="uid://dym8llonybdjj" path="res://moon.gd" id="1_5nvcs"]
+[ext_resource type="Texture2D" uid="uid://c8o6t07fqy0ra" path="res://assets/images/Moon-2.png" id="2_5nvcs"]
+[ext_resource type="Texture2D" uid="uid://bylx6q7u3qeb3" path="res://assets/images/Moon-3.png" id="3_8li54"]
+[ext_resource type="Texture2D" uid="uid://dkag6mwx4n7in" path="res://assets/images/Moon-4.png" id="4_tdk27"]
+[ext_resource type="Texture2D" uid="uid://bap1cmgwuvi52" path="res://assets/images/Moon-5.png" id="5_33kca"]
+[ext_resource type="Texture2D" uid="uid://bjfowihdbijr5" path="res://assets/images/Moon-6.png" id="6_yqenp"]
+[ext_resource type="Texture2D" uid="uid://cxrfrgjbra7hw" path="res://assets/images/Moon-7.png" id="7_ck035"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywd0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1r202")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5nvcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8li54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tdk27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_33kca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yqenp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ck035")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1r202")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5nvcs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(696, 368)
+sprite_frames = SubResource("SpriteFrames_ywd0s")
+
+[node name="Moon1" type="Sprite2D" parent="."]
+position = Vector2(696, 368)
+texture = ExtResource("1_1r202")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(696, 368)
+polygon = PackedVector2Array(-67, -97.29999, -67, -95.899994, -75.20001, -95, -79.5, -95, -93.5, -87, -95.900024, -87, -109.900024, -72, -111.099976, -72, -122, -53.5, -122, -49.200012, -118.79999, -46, -115.400024, -46, -90, -62.899994, -69.900024, -64, -66, -64, -58, -54, -57.400024, -54, -51.400024, -36, -55, -9.100006, -55, -6.700012, -65, 7.399994, -65, 8.799988, -83.29999, 19.299988, -106.70001, 11, -108.099976, 11, -121.20001, -1, -124.400024, -1, -127, 5.600006, -127, 10.700012, -117, 23.600006, -117, 26, -102, 37.899994, -102, 39.299988, -82, 48.200012, -82, 49.700012, -67.20001, 52, -64.79999, 52, -40.599976, 47, -37.299988, 47, -23.299988, 36, -21, 36, -9, 20, -7.700012, 20, -0.7000122, 4, 0.7000122, 4, 4.700012, -20, 6.200012, -20, 5, -34.200012, 5, -40.399994, 1, -51.5, 1, -55.600006, -11, -73.70001, -11, -75.899994, -22, -85, -22, -86.29999, -33, -91.29999, -33, -92.79999)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

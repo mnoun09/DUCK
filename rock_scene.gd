@@ -11,6 +11,7 @@ var star = preload("res://star2.tscn")
 var chair = preload("res://chair.tscn")
 var meteor = preload("res://meteor.tscn")
 var bird = preload("res://bird.tscn")
+var moon = preload("res://moon.tscn")
 var totalScore : int = 0
 var collectedScore : int = 0
 var obstacle_types := [rock, rock2, rock3]
@@ -25,7 +26,6 @@ var gameWon: = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	pass # Replace with function body.
 
 
@@ -33,7 +33,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if bg.color.is_equal_approx(targetColor) or collectedScore == 500:
 		spawn = false
-		stopScoring = true
 		print ("color hit")
 	pass
 
@@ -90,6 +89,8 @@ func scoring():
 		spawn_star()
 		if spawnSpeed >= 1.0:
 			spawnSpeed -= 0.1
+	if not spawn:
+		spawn_moon()
 		
 		
 func spawn_star():
@@ -103,5 +104,11 @@ func spawn_star():
 		score = 0
 		print("score reset")
 		collectedScore += 50
+		
+func spawn_moon():
+
+	var moonObject = moon.instantiate()
+	moonObject.position = Vector2i(0, 0)
+	add_child(moonObject)
 		
 	

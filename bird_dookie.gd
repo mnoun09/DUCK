@@ -15,8 +15,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
-	generate_splatter()
+func _on_body_entered(body) -> void:
+	if body is CharacterBody2D:
+		generate_splatter()
 	pass # Replace with function body.
 	
 func generate_splatter():
