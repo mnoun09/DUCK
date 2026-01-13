@@ -33,7 +33,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	pass
 
 func generate_rock():
@@ -86,14 +85,13 @@ func scoring():
 		elif totalScore == 200:
 			obstacle_types.append(meteor)
 		print (score)
-		spawn_star()
 		if spawnSpeed >= 1.0:
 			spawnSpeed -= 0.1
-	if not spawn:
-		spawn_moon()
+	'''if not spawn:
+		spawn_moon()'''
 		
-		
-func spawn_star():
+#not needed 
+'''func spawn_star():
 	if score == 50:
 		stopScoring = true
 		var starObject = star.instantiate()
@@ -103,7 +101,7 @@ func spawn_star():
 		print("spawned")
 		score = 0
 		print("score reset")
-		collectedScore += 50
+		collectedScore += 50'''
 		
 func spawn_moon():
 

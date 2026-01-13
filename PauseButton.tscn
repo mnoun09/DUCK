@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://i67jbishaxnq"]
+
+[ext_resource type="Script" uid="uid://da0sefynm8rpd" path="res://pause_button.gd" id="1_qcs01"]
+[ext_resource type="Texture2D" uid="uid://470e72jrsli" path="res://assets/images/Buttons/PausePlay-1.png" id="1_x3hg7"]
+[ext_resource type="Texture2D" uid="uid://5xol41x2vd2m" path="res://assets/images/Buttons/PausePlay-2.png" id="2_qcs01"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xo2d"]
+atlas = ExtResource("1_x3hg7")
+region = Rect2(24, 19, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv2ah"]
+atlas = ExtResource("2_qcs01")
+region = Rect2(27, 16, 21, 31)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcs01")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 56.0
+offset_bottom = 48.0
+focus_mode = 1
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_0xo2d")
+texture_pressed = SubResource("AtlasTexture_dv2ah")
+
+[connection signal="toggled" from="TextureButton" to="." method="_on_texture_button_toggled"]

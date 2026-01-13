@@ -13,18 +13,18 @@ size = Vector2(1298, 66)
 [node name="infiniteScene" type="ColorRect"]
 offset_right = 1280.0
 offset_bottom = 928.0
-color = Color(0.627451, 0.87058824, 0.972549, 1)
+color = Color(0.45882353, 0.6509804, 0.39607844, 1)
 script = ExtResource("1_clnn1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_top = -448.0
 offset_right = 1280.0
-offset_bottom = 864.0
+offset_bottom = 720.0
 color = Color(0.627451, 0.87058824, 0.972549, 1)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_7dwoj")]
-position = Vector2(0, -16)
+position = Vector2(0, 8)
 
 [node name="Player" parent="." instance=ExtResource("3_swsxd")]
 position = Vector2(656, 608)
@@ -52,5 +52,5 @@ shape = SubResource("RectangleShape2D_ardno")
 [node name="border3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border3"]
-position = Vector2(656, 680)
+position = Vector2(656, 704)
 shape = SubResource("RectangleShape2D_m84l3")

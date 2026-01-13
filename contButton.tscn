@@ -19,6 +19,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+focus_mode = 0
 texture_normal = SubResource("AtlasTexture_ee4bf")
 script = ExtResource("2_eddl6")
 
