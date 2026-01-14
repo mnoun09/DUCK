@@ -64,8 +64,11 @@ func on_hit_by_meteor(damage: int):
 		update_hearts_display()
 	
 	if egg <= 0:
+		print ("died")
 		rockScene.spawn = false
 		alive = false
+		
+		animated_sprite.play("Dead")
 		
 	#label.meteor_hit()
 	animated_sprite.play("Hurt")

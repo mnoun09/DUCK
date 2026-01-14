@@ -23,6 +23,9 @@ var score : int = 0
 var spawnSpeed : float = 1.5
 var gameWon: = false
 
+var home = preload("res://homeButton.tscn")
+var cont = preload("res://contButton.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -87,6 +90,8 @@ func scoring():
 		print (score)
 		if spawnSpeed >= 1.0:
 			spawnSpeed -= 0.1
+	if !player.alive:
+		player.animated_sprite.play("Dead")
 	'''if not spawn:
 		spawn_moon()'''
 		
