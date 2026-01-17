@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbtc2pnqp0gg5"]
+
+[ext_resource type="FontFile" uid="uid://b4wc42yv1dd0i" path="res://Chewy-Regular.ttf" id="1_8s5qd"]
+[ext_resource type="Script" uid="uid://dckybulk3d5i0" path="res://ScoreLabel.gd" id="2_brs5d"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 648.0
+offset_right = 143.0
+offset_bottom = 720.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8s5qd")
+theme_override_font_sizes/font_size = 43
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_brs5d")

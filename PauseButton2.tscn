@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwpk5eb4esevb"]
+
+[ext_resource type="PackedScene" uid="uid://i67jbishaxnq" path="res://PauseButton.tscn" id="1_hm62y"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 88.0
+
+[node name="Control" parent="HBoxContainer" instance=ExtResource("1_hm62y")]
+layout_mode = 2

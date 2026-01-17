@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct44hc2bnnw5n"]
+
+[ext_resource type="Texture2D" uid="uid://ds7iwjjt5tmnx" path="res://assets/images/Bird/Restart-1.png" id="1_yh4ik"]
+[ext_resource type="Texture2D" uid="uid://dhdn3tr55qtlm" path="res://assets/images/Bird/Restart-2.png" id="2_eh5mm"]
+[ext_resource type="Script" uid="uid://msyv0wi4xdhx" path="res://restart_button_2.gd" id="3_yh4ik"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lnrr"]
+atlas = ExtResource("2_eh5mm")
+region = Rect2(505, 273, 270, 92)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart1" type="Sprite2D" parent="."]
+position = Vector2(152, 80)
+texture = ExtResource("1_yh4ik")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 270.0
+offset_bottom = 92.0
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_6lnrr")
+script = ExtResource("3_yh4ik")
+
+[connection signal="pressed" from="TextureButton2" to="TextureButton2" method="_on_pressed"]

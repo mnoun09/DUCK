@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://do4yua7qdakfi"]
+[gd_scene load_steps=64 format=3 uid="uid://do4yua7qdakfi"]
 
 [ext_resource type="Script" uid="uid://tbqq0j2bu3ad" path="res://character_body_2d.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b24543u60neoh" path="res://assets/images/player/hurt/Hurt_Animation_-1.png" id="2_5tmop"]
@@ -31,6 +31,22 @@
 [ext_resource type="Texture2D" uid="uid://bfl5trv6bomh1" path="res://assets/images/Egg.png" id="25_jm5j8"]
 [ext_resource type="PackedScene" uid="uid://dolbpky6lbtcg" path="res://brokenEgg.tscn" id="26_7hik5"]
 [ext_resource type="PackedScene" uid="uid://i67jbishaxnq" path="res://PauseButton.tscn" id="27_qtqh7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_331ug"]
+atlas = ExtResource("2_634y6")
+region = Rect2(0, 24, 235, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny14h"]
+atlas = ExtResource("3_efrwb")
+region = Rect2(0, 24, 235, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibah8"]
+atlas = ExtResource("4_hiqhm")
+region = Rect2(0, 24, 235, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iwfv"]
+atlas = ExtResource("5_tkwlq")
+region = Rect2(0, 24, 235, 160)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_634y6"]
 atlas = ExtResource("2_5tmop")
@@ -132,20 +148,20 @@ region = Rect2(559, 12, 134, 166)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_634y6")
+"texture": SubResource("AtlasTexture_331ug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_efrwb")
+"texture": SubResource("AtlasTexture_ny14h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_hiqhm")
+"texture": SubResource("AtlasTexture_ibah8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tkwlq")
+"texture": SubResource("AtlasTexture_3iwfv")
 }],
 "loop": true,
 "name": &"Dead",
-"speed": 15.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -297,7 +313,7 @@ script = ExtResource("1_i3pqv")
 position = Vector2(-5, -60)
 sprite_frames = SubResource("SpriteFrames_ebjds")
 animation = &"Dead"
-frame_progress = 0.52346206
+frame_progress = 0.35147408
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -54)
@@ -352,6 +368,7 @@ position = Vector2(-328, 480)
 texture = ExtResource("25_jm5j8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 offset_left = 16.0

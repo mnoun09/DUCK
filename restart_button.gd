@@ -12,6 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	PauseManager.unpause()
-	get_tree().change_scene_to_file("res://startingScreen.tscn")
+	get_tree().change_scene_to_file("res://rockScene.tscn")
 	pass # Replace with function body.

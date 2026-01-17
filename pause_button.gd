@@ -22,7 +22,8 @@ func _process(delta: float) -> void:
 func _on_texture_button_toggled(toggled_on: bool) -> void:
 	
 	get_tree().paused = toggled_on
-	on = !on
+	on = toggled_on
+	print (on)
 	infiniteScene.spawn = !toggled_on
 	home_button()
 	
@@ -37,9 +38,13 @@ func home_button():
 	if homeObject == null:
 		homeObject = home.instantiate()
 		homeObject.process_mode = Node.PROCESS_MODE_ALWAYS
-		homeObject.position = Vector2i(416, 216)
+		homeObject.position = Vector2i(416, 226)
 		add_child(homeObject)
 	homeObject.visible = true
 
+func unpause():
+	if on == true:
+		get_tree().paused = false
+		
 
 	

@@ -12,6 +12,7 @@ var chair = preload("res://chair.tscn")
 var meteor = preload("res://meteor.tscn")
 var bird = preload("res://bird.tscn")
 var moon = preload("res://moon.tscn")
+var restartButton = preload("res://restartButton.tscn")
 var totalScore : int = 0
 var collectedScore : int = 0
 var obstacle_types := [rock, rock2, rock3]
@@ -89,10 +90,18 @@ func scoring():
 		spawn_star()
 		if spawnSpeed >= 1.0:
 			spawnSpeed -= 0.1
+	if not player.alive:
+		add_restartButton()
 	if not spawn:
 		spawn_moon()
 		
-		
+func add_restartButton():
+	var button
+	print ("spawned")
+	button = restartButton.instantiate()
+	button.position = Vector2i(512, 280)
+	add_child(button)
+	
 func spawn_star():
 	if score == 50:
 		stopScoring = true
@@ -106,9 +115,9 @@ func spawn_star():
 		collectedScore += 50
 		
 func spawn_moon():
-
-	var moonObject = moon.instantiate()
-	moonObject.position = Vector2i(0, -500)
-	add_child(moonObject)
+	if player.alive:
+		var moonObject = moon.instantiate()
+		moonObject.position = Vector2i(0, -500)
+		add_child(moonObject)
 		
 	

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var dookie = preload("res://splatter.tscn")
-
+var pauseButton = preload("res://PauseButton2.tscn")
 const SPEED = 400.0
 const JUMP_VELOCITY = -450.0
 var alive : bool = true
@@ -14,6 +14,9 @@ var eggs_list : Array[TextureRect]
 var egg = 3 
 
 func _ready() -> void:
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	if current_scene_path == "res://infinite_scene.tscn":
+		add_pauseButton()
 	var hearts_parent = $healthBar/HBoxContainer
 	for child in hearts_parent.get_children():
 		eggs_list.append(child)
@@ -67,8 +70,10 @@ func on_hit_by_meteor(damage: int):
 		print ("died")
 		rockScene.spawn = false
 		alive = false
-		
+		animated_sprite.play("Hurt")
+		await animated_sprite.animation_finished
 		animated_sprite.play("Dead")
+		await animated_sprite.animation_finished
 		
 	#label.meteor_hit()
 	animated_sprite.play("Hurt")
@@ -93,6 +98,12 @@ func generate_splatter():
 func add_splatter(obs, x, y):
 	obs.global_position = Vector2(x, y)
 	$Camera2D.add_child(obs)
+	
+func add_pauseButton():
+	var button
+	button = pauseButton.instantiate()
+	add_child(button)
+
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://cukwga3hsgmy0"]
+
+[ext_resource type="Texture2D" uid="uid://du48vw10n21mk" path="res://assets/images/Home2.png" id="1_c82vk"]
+[ext_resource type="Texture2D" uid="uid://dhdn3tr55qtlm" path="res://assets/images/Bird/Restart-2.png" id="1_ucq3v"]
+[ext_resource type="Script" uid="uid://c630yml5w41ht" path="res://home_button.gd" id="2_08xhb"]
+[ext_resource type="Script" uid="uid://lorrl78kfpku" path="res://restart_button.gd" id="2_y2udn"]
+[ext_resource type="Texture2D" uid="uid://ds7iwjjt5tmnx" path="res://assets/images/Bird/Restart-1.png" id="4_c82vk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbbqg"]
+atlas = ExtResource("1_c82vk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lnrr"]
+atlas = ExtResource("1_ucq3v")
+region = Rect2(505, 273, 270, 92)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="home" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -496.0
+offset_top = -384.0
+offset_right = 784.0
+offset_bottom = 336.0
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_gbbqg")
+script = ExtResource("2_08xhb")
+
+[node name="Restart1" type="Sprite2D" parent="."]
+position = Vector2(152, 80)
+texture = ExtResource("4_c82vk")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 270.0
+offset_bottom = 212.0
+focus_mode = 0
+texture_normal = SubResource("AtlasTexture_6lnrr")
+script = ExtResource("2_y2udn")
+
+[connection signal="pressed" from="home" to="home" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton2" to="TextureButton2" method="_on_pressed"]

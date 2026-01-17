@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ehqdosjpfy0u"]
+[gd_scene load_steps=7 format=3 uid="uid://ehqdosjpfy0u"]
 
 [ext_resource type="Script" uid="uid://cru70kv67g8xv" path="res://infinite_scene.gd" id="1_clnn1"]
 [ext_resource type="PackedScene" uid="uid://wholtbo35qby" path="res://grass.tscn" id="2_7dwoj"]
 [ext_resource type="PackedScene" uid="uid://do4yua7qdakfi" path="res://player.tscn" id="3_swsxd"]
+[ext_resource type="PackedScene" uid="uid://bbtc2pnqp0gg5" path="res://ScoreLabel.tscn" id="4_7dwoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ardno"]
 size = Vector2(162, 730)
@@ -28,6 +29,8 @@ position = Vector2(0, 8)
 
 [node name="Player" parent="." instance=ExtResource("3_swsxd")]
 position = Vector2(656, 608)
+
+[node name="CanvasLayer2" parent="Player" instance=ExtResource("4_7dwoj")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" groups=["player_camera"]]
 position = Vector2(0, -240)

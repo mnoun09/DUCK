@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	
 	my_button.hide()
 	my_label.add_theme_font_size_override("font_size", 30)
 	my_label.text = "Yes, that must be it!"
@@ -36,7 +35,6 @@ func _on_button_pressed() -> void:
 	my_label.add_theme_font_size_override("font_size", 25)
 	my_label.text = "But watch out, things are still falling"
 	await get_tree().create_timer(2).timeout
-	
 	rock.spawning_rock()
 	rock.scoring()
 	box.hide()

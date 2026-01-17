@@ -22,7 +22,14 @@ layout_mode = 0
 offset_top = -448.0
 offset_right = 1280.0
 offset_bottom = 864.0
-color = Color(0.028362116, 0.15252784, 0.19864342, 1)
+color = Color(0.038283415, 0.18369576, 0.23770148, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 648.0
+offset_right = 1280.0
+offset_bottom = 920.0
+color = Color(0.45882353, 0.6509804, 0.39607844, 1)
 
 [node name="rockLabel" parent="." instance=ExtResource("4_m84l3")]
 position = Vector2(0, -192)
