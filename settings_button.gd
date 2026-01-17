@@ -1,5 +1,5 @@
 extends TextureButton
-
+var settingText = preload("res://settingsLabel.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +11,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed() -> void:
+	var label
+	label = settingText.instantiate()
+	add_child(label)
 	print ("settings pressed!")
 	pass # Replace with function body.

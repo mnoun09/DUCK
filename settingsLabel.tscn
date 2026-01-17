@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlgyc5oqbx6l0"]
+
+[ext_resource type="FontFile" uid="uid://b4wc42yv1dd0i" path="res://Chewy-Regular.ttf" id="1_xrshf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -600.0
+offset_top = 168.0
+offset_right = 680.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("1_xrshf")
+theme_override_font_sizes/font_size = 43
+text = "No settings... get bamboozled!"
+horizontal_alignment = 1
+vertical_alignment = 1
